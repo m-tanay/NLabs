@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { ArrowUpRight, Mail, Clock, Globe, Send, Linkedin, Instagram, Facebook, Dribbble, CheckCircle, Sparkles } from 'lucide-react'
+import { ArrowUpRight, Mail, Clock, Globe, Send, Linkedin, Instagram, Facebook, Dribbble, CheckCircle, Sparkles, Star } from 'lucide-react'
 import Badge from '../components/Badge'
 import { NavLink } from 'react-router-dom'
 import { Reveal } from '../hooks/useInView'
 
-const FORMSPREE_ID = 'YOUR_FORMSPREE_ID' // Replace with your Formspree form ID
+const FORMSPREE_ID   = 'YOUR_FORMSPREE_ID'   // Replace with your Formspree form ID
+const CALENDLY_URL   = 'https://calendly.com/YOUR_USERNAME/30min' // Replace with your Calendly link
 
 const services = [
   'Web Design & Development',
@@ -23,6 +24,181 @@ const budgets = [
   { label: '$3K – $5K',       v: '3k-5k' },
   { label: '$5K+',            v: '5k-plus' },
 ]
+
+const testimonials = [
+  { quote: 'NexbeeLabs delivered our entire website in under 3 weeks. The quality blew us away.', name: 'Rahim H.', role: 'CEO, TechBD' },
+  { quote: 'Our SEO traffic tripled in four months. Best investment we made this year.', name: 'Karim A.', role: 'MD, GreenMart' },
+  { quote: 'The brand identity they built feels exactly like us — they really listened.', name: 'Mitu R.', role: 'Founder, Bloom Studio' },
+  { quote: 'Transparent, fast, and genuinely talented. Nothing like the agencies we tried before.', name: 'Sara K.', role: 'Co-founder, StyleHive' },
+  { quote: 'They responded within 2 hours of our first message and never missed a deadline.', name: 'Jasim T.', role: 'CTO, ByteCraft' },
+  { quote: 'Our conversion rate went up 40% after the redesign. Remarkable work.', name: 'Nabil F.', role: 'Head of Growth, ShopEasy' },
+]
+
+const stats = [
+  { value: '120+', label: 'Projects delivered' },
+  { value: '100%', label: 'Client satisfaction' },
+  { value: '< 24h', label: 'Response time' },
+  { value: '5.0★', label: 'Average rating' },
+  { value: '6yr',  label: 'Combined experience' },
+]
+
+function Stars() {
+  return (
+    <div style={{display:'flex',gap:2,marginBottom:10}}>
+      {[...Array(5)].map((_,i) => <Star key={i} size={12} fill="#ffb86c" color="#ffb86c"/>)}
+    </div>
+  )
+}
+
+function TrustSignals() {
+  const row1 = [...testimonials, ...testimonials]
+  const row2 = [...stats, ...stats, ...stats, ...stats]
+  return (
+    <section className="nb-trust-section">
+      {/* Row 1 — testimonials scrolling left */}
+      <div className="nb-trust-track-wrap">
+        <div className="nb-trust-track">
+          {row1.map((t, i) => (
+            <div key={i} className="nb-trust-quote-card">
+              <Stars/>
+              <p className="nb-trust-quote">"{t.quote}"</p>
+              <div className="nb-trust-author">
+                <span className="nb-trust-name">{t.name}</span>
+                <span className="nb-trust-role">{t.role}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Row 2 — stats scrolling right */}
+      <div className="nb-trust-track-wrap" style={{marginTop:12}}>
+        <div className="nb-trust-track nb-trust-track-reverse">
+          {row2.map((s, i) => (
+            <div key={i} className="nb-trust-stat-card">
+              <span className="nb-trust-stat-val">{s.value}</span>
+              <span className="nb-trust-stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const complexityOptions = ['Basic', 'Standard', 'Advanced', 'Complex', 'Enterprise']
+const complexityMult    = [1, 1.5, 2.2, 3.2, 4.5]
+const teamOptions       = ['Solo', 'Duo', 'Small', 'Medium', 'Full team']
+const teamMult          = [1, 1.6, 2.2, 2.8, 3.6]
+
+function BudgetEstimator() {
+  const [timeline,   setTimeline]   = useState(4)
+  const [complexity, setComplexity] = useState(1)
+  const [teamSize,   setTeamSize]   = useState(1)
+
+  const base = 350
+  const lo   = Math.round(timeline * base * complexityMult[complexity] * teamMult[teamSize] / 50) * 50
+  const hi   = Math.round(lo * 1.3 / 50) * 50
+  const fmt  = n => n >= 1000 ? `$${(n % 1000 === 0 ? n / 1000 : (n / 1000).toFixed(1))}K` : `$${n}`
+
+  const trackBg = (val, min, max, color) => {
+    const pct = ((val - min) / (max - min)) * 100
+    return `linear-gradient(to right,${color} ${pct}%,rgba(255,255,255,.1) ${pct}%)`
+  }
+
+  return (
+    <section style={{padding:'0 0 80px'}}>
+      <div className="nb-container">
+        <Reveal>
+          <div style={{textAlign:'center',marginBottom:48}}>
+            <Badge>Budget Estimator</Badge>
+            <h2 className="nb-h2" style={{marginTop:16}}>Get a ballpark <span className="nb-grad">in 10 seconds</span></h2>
+            <p className="nb-section-sub" style={{margin:'16px auto 0',maxWidth:520}}>
+              Adjust the sliders — we'll calculate a realistic range instantly. No forms, no waiting.
+            </p>
+          </div>
+        </Reveal>
+        <Reveal delay="0.1s">
+          <div className="nb-estimator-card">
+            {/* Sliders */}
+            <div className="nb-estimator-sliders">
+
+              <div className="nb-estimator-group">
+                <div className="nb-estimator-row">
+                  <label className="nb-estimator-label">Timeline</label>
+                  <span className="nb-estimator-val" style={{color:'#00f0ff'}}>{timeline} {timeline === 1 ? 'week' : 'weeks'}</span>
+                </div>
+                <input type="range" min={1} max={12} step={1} value={timeline}
+                  onChange={e => setTimeline(+e.target.value)}
+                  className="nb-estimator-slider"
+                  style={{background: trackBg(timeline, 1, 12, '#00f0ff')}}
+                />
+                <div className="nb-estimator-ticks">
+                  <span>1 wk</span><span>4 wks</span><span>8 wks</span><span>12 wks</span>
+                </div>
+              </div>
+
+              <div className="nb-estimator-group">
+                <div className="nb-estimator-row">
+                  <label className="nb-estimator-label">Project Complexity</label>
+                  <span className="nb-estimator-val" style={{color:'#7928ca'}}>{complexityOptions[complexity]}</span>
+                </div>
+                <input type="range" min={0} max={4} step={1} value={complexity}
+                  onChange={e => setComplexity(+e.target.value)}
+                  className="nb-estimator-slider"
+                  style={{background: trackBg(complexity, 0, 4, '#7928ca')}}
+                />
+                <div className="nb-estimator-ticks">
+                  {complexityOptions.map(o => <span key={o}>{o}</span>)}
+                </div>
+              </div>
+
+              <div className="nb-estimator-group">
+                <div className="nb-estimator-row">
+                  <label className="nb-estimator-label">Team Size</label>
+                  <span className="nb-estimator-val" style={{color:'#ff0080'}}>{teamOptions[teamSize]}</span>
+                </div>
+                <input type="range" min={0} max={4} step={1} value={teamSize}
+                  onChange={e => setTeamSize(+e.target.value)}
+                  className="nb-estimator-slider"
+                  style={{background: trackBg(teamSize, 0, 4, '#ff0080')}}
+                />
+                <div className="nb-estimator-ticks">
+                  {teamOptions.map(o => <span key={o}>{o}</span>)}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Result panel */}
+            <div className="nb-estimator-result">
+              <p className="nb-estimator-result-label">Estimated Investment</p>
+              <div className="nb-estimator-price">
+                <span className="nb-grad">{fmt(lo)}</span>
+                <span className="nb-estimator-dash"> – </span>
+                <span className="nb-grad">{fmt(hi)}</span>
+              </div>
+              <p className="nb-estimator-result-note">
+                Ballpark based on typical project scope. Final quote confirmed after discovery call.
+              </p>
+              <div className="nb-estimator-includes">
+                {['All revisions included', '30-day post-launch support', 'No hidden costs, ever'].map(item => (
+                  <div key={item} className="nb-estimator-include-row">
+                    <CheckCircle size={13} style={{color:'#00f0ff', flexShrink:0}}/>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <NavLink to="/contact" className="nb-btn nb-btn-grad" style={{width:'100%', justifyContent:'center', marginTop:'auto', paddingTop:24}}>
+                Get an exact quote <ArrowUpRight size={15}/>
+              </NavLink>
+            </div>
+
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
 
 export default function Contact() {
   const [form, setForm] = useState({ name:'', email:'', company:'', service:'', budget:'', message:'' })
@@ -70,6 +246,8 @@ export default function Contact() {
           </Reveal>
         </div>
       </section>
+
+      <TrustSignals/>
 
       {/* ── Main grid ── */}
       <section style={{padding:'80px 0 100px'}}>
@@ -215,6 +393,90 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* ── Schedule a Meeting ── */}
+      <section className="nb-booking-section">
+        <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:'50%',left:-200,transform:'translateY(-50%)',opacity:.06,pointerEvents:'none'}}/>
+        <div className="nb-container" style={{position:'relative',zIndex:2}}>
+          <div className="nb-booking-grid">
+
+            {/* Left — info panel */}
+            <Reveal>
+              <div className="nb-booking-info">
+                <Badge>Free discovery call</Badge>
+                <h2 className="nb-booking-h">Let's talk about<br/><span className="nb-grad">your project</span></h2>
+                <p className="nb-booking-sub">No pitch, no pressure — just 30 minutes to understand what you're building and whether we're the right fit.</p>
+
+                {/* Host */}
+                <div className="nb-booking-host">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80&crop=faces"
+                    alt="Mehad Hossain"
+                    className="nb-booking-host-img"
+                  />
+                  <div>
+                    <p className="nb-booking-host-name">Mehad Hossain</p>
+                    <p className="nb-booking-host-role">Founder, NexbeeLabs</p>
+                  </div>
+                </div>
+
+                {/* What we'll cover */}
+                <p className="nb-booking-covers-title">What we'll cover</p>
+                <div className="nb-booking-covers">
+                  {[
+                    'Your goals, timeline & budget',
+                    'Which services best fit your needs',
+                    'Our process and how we work',
+                    'Honest next steps — even if that means pointing you elsewhere',
+                  ].map(item => (
+                    <div key={item} className="nb-booking-cover-row">
+                      <CheckCircle size={14} style={{color:'#00f0ff',flexShrink:0}}/>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Badges */}
+                <div className="nb-booking-badges">
+                  {[
+                    {label:'30 min', sub:'Duration'},
+                    {label:'Free',   sub:'No charge'},
+                    {label:'Video',  sub:'Google Meet'},
+                  ].map(b => (
+                    <div key={b.label} className="nb-booking-badge">
+                      <span className="nb-booking-badge-val">{b.label}</span>
+                      <span className="nb-booking-badge-sub">{b.sub}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Right — calendar */}
+            <Reveal delay="0.15s">
+              <div className="nb-calendly-wrap">
+                <div className="nb-calendly-header">
+                  <div className="nb-calendly-dot" style={{background:'#00f0ff'}}/>
+                  <div className="nb-calendly-dot" style={{background:'#7928ca'}}/>
+                  <div className="nb-calendly-dot" style={{background:'#ff0080'}}/>
+                  <span className="nb-calendly-label">calendly.com · NexbeeLabs</span>
+                </div>
+                <iframe
+                  src={CALENDLY_URL}
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  title="Schedule a meeting with NexbeeLabs"
+                  style={{display:'block'}}
+                />
+              </div>
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
+
+      <BudgetEstimator/>
 
       {/* ── CTA ── */}
       <section style={{padding:'0 0 100px',position:'relative'}}>
