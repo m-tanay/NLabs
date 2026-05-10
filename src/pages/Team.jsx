@@ -1,4 +1,4 @@
-import { Linkedin, Globe, Code2, PenTool, TrendingUp, Megaphone, ArrowRight, Star, Zap, Coffee, Music, BookOpen } from 'lucide-react'
+import { Linkedin, Globe, Code2, PenTool, TrendingUp, Megaphone, ArrowRight, Star, Zap, Coffee, Music, BookOpen, Target, MessageSquare, Layers } from 'lucide-react'
 import Badge from '../components/Badge'
 import { NavLink } from 'react-router-dom'
 import { Reveal, StaggerReveal } from '../hooks/useInView'
@@ -7,57 +7,72 @@ const team = [
   {
     initials: 'MH', name: 'Mehad Hossain', role: 'Founder & Creative Director',
     color: '#00f0ff', grad: 'linear-gradient(135deg,#0070f3,#00f0ff)',
-    bio: 'Obsessed with the intersection of strategy and craft. Has led design and brand work for startups and established businesses across South Asia and beyond.',
-    longBio: 'Started NexbeeLabs after years of watching businesses settle for generic work from agencies that treated them like ticket numbers. Believes great design is invisible and great brands are felt before they are read.',
-    skills: ['Brand Strategy','UI/UX','Creative Direction','Figma','Webflow'],
-    facts: [{ Icon: Coffee, text: '4 espressos/day' },{ Icon: Music, text: 'Jazz while designing' },{ Icon: BookOpen, text: 'Reads 30 books/yr' }],
-    Icon: PenTool, links: { linkedin: '#', portfolio: '#' },
-    stats: [{ v: '120+', l: 'Brands built' },{ v: '6yr', l: 'Experience' }],
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
+    bio: 'Obsessed with the intersection of strategy and craft. Has led design and brand work for startups across South Asia and beyond.',
+    skills: ['Brand Strategy','UI/UX','Creative Direction','Figma'],
+    links: { linkedin: '#', portfolio: '#' },
   },
   {
     initials: 'FK', name: 'Farhan Khan', role: 'Lead Developer',
     color: '#7928ca', grad: 'linear-gradient(135deg,#7928ca,#ff0080)',
-    bio: 'Full-stack developer with a frontend heart. Writes clean, well-documented code that developers actually enjoy reading.',
-    longBio: 'Spent years at product companies before joining NexbeeLabs at founding. Believes that performance is a feature, and that code you can\'t understand in 6 months shouldn\'t ship.',
-    skills: ['Next.js','TypeScript','Node.js','PostgreSQL','Tailwind'],
-    facts: [{ Icon: Zap, text: 'Speed obsessed' },{ Icon: Coffee, text: 'Mechanical keyboards' },{ Icon: BookOpen, text: 'OSS contributor' }],
-    Icon: Code2, links: { linkedin: '#', portfolio: '#' },
-    stats: [{ v: '98', l: 'Avg Lighthouse' },{ v: '5yr', l: 'Experience' }],
+    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
+    bio: 'Full-stack developer with a frontend heart. Writes clean, performant code that developers actually enjoy reading.',
+    skills: ['Next.js','TypeScript','Node.js','Tailwind'],
+    links: { linkedin: '#', portfolio: '#' },
   },
   {
     initials: 'SI', name: 'Sanjida Islam', role: 'Growth & SEO Strategist',
     color: '#ff0080', grad: 'linear-gradient(135deg,#ff0080,#ffb86c)',
-    bio: 'Data-driven marketer with a creative streak. Specialises in technical SEO, content strategy, and paid campaigns that actually convert.',
-    longBio: 'Has managed 6-figure ad budgets and built content systems that outlast campaigns. Thinks most SEO advice is outdated by 2 years and that most agencies are still following it.',
-    skills: ['Technical SEO','Google Ads','Content Strategy','Analytics','Ahrefs'],
-    facts: [{ Icon: TrendingUp, text: 'Data before opinions' },{ Icon: Coffee, text: 'Matcha, not coffee' },{ Icon: Star, text: 'Speaker at 3 events' }],
-    Icon: TrendingUp, links: { linkedin: '#', portfolio: '#' },
-    stats: [{ v: 'Page 1', l: 'Avg ranking' },{ v: '4yr', l: 'Experience' }],
+    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
+    bio: 'Data-driven marketer with a creative streak. Specialises in technical SEO and paid campaigns that actually convert.',
+    skills: ['Technical SEO','Google Ads','Analytics','Ahrefs'],
+    links: { linkedin: '#', portfolio: '#' },
   },
   {
     initials: 'NR', name: 'Nadia Rahman', role: 'Social Media Lead',
     color: '#ffb86c', grad: 'linear-gradient(135deg,#ffb86c,#ff0080)',
+    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
     bio: 'Storyteller turned social strategist. Builds content systems that scale and communities that actually stick.',
-    longBio: 'Grew up online and turned that into a career. Has grown brand accounts from 0 to 50K+ across fashion, food, and tech. Believes in content that earns attention rather than buying it.',
-    skills: ['Instagram','Content Creation','Community Mgmt','CapCut','Notion'],
-    facts: [{ Icon: Star, text: '50K+ followers grown' },{ Icon: Music, text: 'Trend-spotter' },{ Icon: Coffee, text: 'Shoots all own reels' }],
-    Icon: Megaphone, links: { linkedin: '#', portfolio: '#' },
-    stats: [{ v: '6×', l: 'Avg engagement' },{ v: '3yr', l: 'Experience' }],
+    skills: ['Instagram','Content Creation','Community Mgmt','CapCut'],
+    links: { linkedin: '#', portfolio: '#' },
+  },
+  {
+    initials: 'RA', name: 'Rakin Ahmed', role: 'Motion & Brand Designer',
+    color: '#0070f3', grad: 'linear-gradient(135deg,#0070f3,#7928ca)',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
+    bio: 'Motion designer who believes animation should have a purpose. Turns static brands into living, breathing identities.',
+    skills: ['After Effects','Motion Design','Illustrator','Lottie'],
+    links: { linkedin: '#', portfolio: '#' },
+  },
+  {
+    initials: 'TC', name: 'Tasnim Chowdhury', role: 'Project & Client Lead',
+    color: '#00c896', grad: 'linear-gradient(135deg,#00c896,#0070f3)',
+    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
+    bio: 'Keeps every project on track and every client in the loop. The reason nothing falls through the cracks at NexbeeLabs.',
+    skills: ['Project Mgmt','Client Success','Notion','Scrum'],
+    links: { linkedin: '#', portfolio: '#' },
   },
 ]
 
 function PageHero() {
   return (
     <section className="nb-page-hero">
-      <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:-150,left:-100}}/>
-      <div className="nb-orb nb-orb-blue"   style={{width:400,height:400,bottom:0,right:-100}}/>
+      <img
+        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80"
+        alt=""
+        aria-hidden="true"
+        style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center',zIndex:0}}
+      />
+      <div style={{position:'absolute',inset:0,zIndex:1,background:'linear-gradient(to bottom,rgba(5,5,15,.6) 0%,rgba(5,5,15,.85) 100%)'}}/>
+      <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:-150,left:-100,zIndex:2}}/>
+      <div className="nb-orb nb-orb-blue"   style={{width:400,height:400,bottom:0,right:-100,zIndex:2}}/>
       <div className="nb-container" style={{position:'relative',zIndex:10}}>
         <Reveal><Badge>The Team</Badge></Reveal>
         <Reveal delay="0.1s">
           <h1 className="nb-page-h1">Small team.<br/><span className="nb-grad">Serious craft.</span></h1>
         </Reveal>
         <Reveal delay="0.2s">
-          <p className="nb-page-sub">Four specialists who've chosen depth over breadth. You work directly with the people doing the work — always.</p>
+          <p className="nb-page-sub">Six specialists who've chosen depth over breadth. You work directly with the people doing the work — always.</p>
         </Reveal>
       </div>
     </section>
@@ -68,65 +83,27 @@ function TeamCards() {
   return (
     <section style={{padding:'60px 0 80px',position:'relative'}}>
       <div className="nb-container">
-        <div className="nb-team-profile-grid">
-          {team.map((m, i) => (
-            <Reveal key={m.initials} delay={`${i * 0.1}s`}>
-              <div className="nb-profile-card">
-                {/* Top glow strip */}
-                <div className="nb-profile-glow-strip" style={{background:`linear-gradient(90deg,${m.color},transparent)`}}/>
+        <StaggerReveal className="nb-team-profile-grid" step={0.08}>
+          {team.map(m => (
+            <div key={m.initials} className="nb-portrait-card">
+              {/* Photo */}
+              <div className="nb-portrait-img-wrap">
+                <img src={m.photo} alt={m.name} className="nb-portrait-img"/>
+                <div className="nb-portrait-img-overlay" style={{background:`linear-gradient(to top,rgba(10,10,14,.85) 0%,transparent 60%)`}}/>
+                <div className="nb-portrait-accent" style={{background:m.color}}/>
+              </div>
 
-                {/* Header */}
-                <div className="nb-profile-header">
-                  <div className="nb-profile-avatar" style={{background:m.grad}}>
-                    <span className="nb-profile-initials">{m.initials}</span>
-                    <div className="nb-profile-role-icon" style={{background:`${m.color}20`,border:`1px solid ${m.color}40`,color:m.color}}>
-                      <m.Icon size={12}/>
-                    </div>
-                  </div>
-                  <div className="nb-profile-title-wrap">
-                    <h3 className="nb-profile-name">{m.name}</h3>
-                    <p className="nb-profile-role" style={{color:m.color}}>{m.role}</p>
-                  </div>
-                </div>
-
-                {/* Stats row */}
-                <div className="nb-profile-stats">
-                  {m.stats.map(s => (
-                    <div key={s.l} className="nb-profile-stat">
-                      <span className="nb-profile-stat-v" style={{color:m.color}}>{s.v}</span>
-                      <span className="nb-profile-stat-l">{s.l}</span>
-                    </div>
-                  ))}
-                  <div className="nb-profile-stat-divider"/>
-                  <div className="nb-profile-stat">
-                    <span className="nb-profile-stat-v" style={{color:m.color}}>{m.skills.length}+</span>
-                    <span className="nb-profile-stat-l">Skills</span>
-                  </div>
-                </div>
-
-                {/* Bio */}
-                <p className="nb-profile-bio">{m.bio}</p>
-                <p className="nb-profile-long-bio">{m.longBio}</p>
-
-                {/* Skills */}
-                <div className="nb-profile-skills">
+              {/* Body */}
+              <div className="nb-portrait-body">
+                <h3 className="nb-portrait-name">{m.name}</h3>
+                <p className="nb-portrait-role" style={{color:m.color}}>{m.role}</p>
+                <p className="nb-portrait-bio">{m.bio}</p>
+                <div className="nb-portrait-skills">
                   {m.skills.map(s => (
-                    <span key={s} className="nb-profile-skill-tag" style={{borderColor:`${m.color}30`,color:`${m.color}dd`}}>{s}</span>
+                    <span key={s} className="nb-portrait-tag" style={{borderColor:`${m.color}30`,color:`${m.color}cc`}}>{s}</span>
                   ))}
                 </div>
-
-                {/* Fun facts */}
-                <div className="nb-profile-facts">
-                  {m.facts.map(f => (
-                    <div key={f.text} className="nb-profile-fact" style={{background:`${m.color}08`,border:`1px solid ${m.color}18`}}>
-                      <f.Icon size={12} style={{color:m.color,flexShrink:0}}/>
-                      <span>{f.text}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Footer links */}
-                <div className="nb-profile-footer">
+                <div className="nb-portrait-footer">
                   <a href={m.links.linkedin} className="nb-profile-link" style={{'--c':m.color}}>
                     <Linkedin size={14}/> LinkedIn
                   </a>
@@ -135,9 +112,9 @@ function TeamCards() {
                   </a>
                 </div>
               </div>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )
@@ -145,10 +122,10 @@ function TeamCards() {
 
 function Culture() {
   const items = [
-    { emoji:'🎯', title:'Skin in the game',  body:'We only take projects we believe in. If we don\'t think something will work, we\'ll tell you.' },
-    { emoji:'💬', title:'Radical honesty',    body:'No sugar-coating. We share what we think and expect the same back.' },
-    { emoji:'🏗️', title:'Build to last',      body:'Every project is something we\'d be proud to put our name on publicly.' },
-    { emoji:'🌍', title:'Remote-first',       body:'Based in Dhaka, collaborating globally. Async done right.' },
+    { Icon: Target,       color: '#00f0ff', title: 'Skin in the game', body: 'We only take projects we believe in. If we don\'t think something will work, we\'ll tell you.' },
+    { Icon: MessageSquare,color: '#7928ca', title: 'Radical honesty',  body: 'No sugar-coating. We share what we think and expect the same back.' },
+    { Icon: Layers,       color: '#ff0080', title: 'Build to last',    body: 'Every project is something we\'d be proud to put our name on publicly.' },
+    { Icon: Globe,        color: '#ffb86c', title: 'Remote-first',     body: 'Based in Dhaka, collaborating globally. Async done right.' },
   ]
   return (
     <section style={{padding:'0 0 80px',background:'radial-gradient(ellipse at top,rgba(121,40,202,.06),transparent 60%)'}}>
@@ -162,7 +139,9 @@ function Culture() {
         <StaggerReveal className="nb-culture-grid" step={0.1}>
           {items.map(c => (
             <div key={c.title} className="nb-culture-card">
-              <div className="nb-culture-emoji">{c.emoji}</div>
+              <div className="nb-culture-icon" style={{background:`${c.color}15`,color:c.color,border:`1px solid ${c.color}30`}}>
+                <c.Icon size={20}/>
+              </div>
               <h3 style={{fontWeight:700,fontSize:'1.05rem',marginBottom:8}}>{c.title}</h3>
               <p style={{color:'rgba(255,255,255,.55)',lineHeight:1.65,fontSize:'.88rem'}}>{c.body}</p>
             </div>

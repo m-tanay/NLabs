@@ -8,6 +8,7 @@ const links = [
   { label: 'Portfolio', to: '/portfolio' },
   { label: 'Process',   to: '/process' },
   { label: 'Team',      to: '/team' },
+  { label: 'Contact',   to: '/contact' },
 ]
 
 export default function Navbar() {

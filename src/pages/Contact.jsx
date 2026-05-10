@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ArrowUpRight, Mail, Clock, Globe, Send, Linkedin, Instagram, Facebook, Dribbble, CheckCircle, Sparkles } from 'lucide-react'
 import Badge from '../components/Badge'
+import { NavLink } from 'react-router-dom'
 import { Reveal } from '../hooks/useInView'
 
 const FORMSPREE_ID = 'YOUR_FORMSPREE_ID' // Replace with your Formspree form ID
@@ -50,8 +51,15 @@ export default function Contact() {
     <>
       {/* ── Hero ── */}
       <section className="nb-contact-hero">
-        <div className="nb-orb nb-orb-blue"   style={{width:600,height:600,top:-200,right:-100,opacity:.25}}/>
-        <div className="nb-orb nb-orb-purple" style={{width:400,height:400,bottom:-100,left:-100,opacity:.2}}/>
+        <img
+          className="nb-contact-hero-bg"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80"
+          alt=""
+          aria-hidden="true"
+        />
+        <div className="nb-contact-hero-overlay"/>
+        <div className="nb-orb nb-orb-blue"   style={{width:600,height:600,top:-200,right:-100,opacity:.2,zIndex:2}}/>
+        <div className="nb-orb nb-orb-purple" style={{width:400,height:400,bottom:-100,left:-100,opacity:.15,zIndex:2}}/>
         <div className="nb-container" style={{position:'relative',zIndex:10}}>
           <Reveal><Badge>Get in touch</Badge></Reveal>
           <Reveal delay="0.1s">
@@ -64,7 +72,7 @@ export default function Contact() {
       </section>
 
       {/* ── Main grid ── */}
-      <section style={{padding:'0 0 100px'}}>
+      <section style={{padding:'80px 0 100px'}}>
         <div className="nb-container">
           <div className="nb-contact-layout">
 
@@ -205,6 +213,28 @@ export default function Contact() {
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section style={{padding:'0 0 100px',position:'relative'}}>
+        <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:'50%',left:'50%',transform:'translate(-50%,-50%)',opacity:.06,pointerEvents:'none'}}/>
+        <div className="nb-container nb-container-narrow" style={{position:'relative',zIndex:2}}>
+          <Reveal>
+            <div className="nb-contact-cta-card">
+              <Badge>Not sure yet?</Badge>
+              <h2 className="nb-h2" style={{marginTop:16}}>
+                Explore our work<br/><span className="nb-grad">before reaching out.</span>
+              </h2>
+              <p className="nb-section-sub" style={{margin:'16px auto 36px',maxWidth:500}}>
+                See what we've built and how we think — then come back and say hello. No pressure, no hard sell.
+              </p>
+              <div style={{display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap'}}>
+                <NavLink to="/portfolio" className="nb-btn nb-btn-grad">See our work <ArrowUpRight size={16}/></NavLink>
+                <NavLink to="/services"  className="nb-btn nb-btn-ghost">What we offer</NavLink>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

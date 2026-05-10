@@ -45,8 +45,15 @@ const faqs = [
 function PageHero() {
   return (
     <section className="nb-page-hero">
-      <div className="nb-orb nb-orb-blue"   style={{width:500,height:500,top:-150,right:-100}}/>
-      <div className="nb-orb nb-orb-purple" style={{width:400,height:400,bottom:0,left:-100}}/>
+      <img
+        src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1920&q=80"
+        alt=""
+        aria-hidden="true"
+        style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center',zIndex:0}}
+      />
+      <div style={{position:'absolute',inset:0,zIndex:1,background:'linear-gradient(to bottom,rgba(5,5,15,.6) 0%,rgba(5,5,15,.85) 100%)'}}/>
+      <div className="nb-orb nb-orb-blue"   style={{width:500,height:500,top:-150,right:-100,zIndex:2}}/>
+      <div className="nb-orb nb-orb-purple" style={{width:400,height:400,bottom:0,left:-100,zIndex:2}}/>
       <div className="nb-container" style={{position:'relative',zIndex:10}}>
         <Reveal><Badge>How we work</Badge></Reveal>
         <Reveal delay="0.1s"><h1 className="nb-page-h1">A process built for<br/><span className="nb-grad">no surprises</span></h1></Reveal>
