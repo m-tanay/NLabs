@@ -13,9 +13,9 @@ const team = [
     links: { linkedin: '#', portfolio: '#' },
   },
   {
-    initials: 'FK', name: 'Farhan Khan', role: 'Lead Developer',
+    initials: 'MS', name: 'Md. Mehadi Hasan Shawon', role: 'Lead Developer',
     color: '#7928ca', grad: 'linear-gradient(135deg,#7928ca,#ff0080)',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
+    photo: '/assets/Shawon.jpg',
     bio: 'Full-stack developer with a frontend heart. Writes clean, performant code that developers actually enjoy reading.',
     skills: ['Next.js','TypeScript','Node.js','Tailwind'],
     links: { linkedin: '#', portfolio: '#' },
