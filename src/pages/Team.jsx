@@ -7,7 +7,7 @@ const team = [
   {
     initials: 'NT', name: 'Md. Niamul Islam Tanay', role: 'Founder & Creative Director',
     color: '#00f0ff', grad: 'linear-gradient(135deg,#0070f3,#00f0ff)',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
+    photo: '/assets/NexBEE.JPG',
     bio: 'Obsessed with the intersection of strategy and craft. Has led design and brand work for startups across South Asia and beyond.',
     skills: ['Brand Strategy','UI/UX','Creative Direction','Figma'],
     links: { linkedin: '#', portfolio: '#' },
