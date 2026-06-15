@@ -404,7 +404,7 @@ export default function Contact() {
                 <p className="nb-booking-sub">No pitch, no pressure — just 30 minutes to understand what you're building and whether we're the right fit.</p>
                 <div className="nb-booking-host">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80&crop=faces"
+                    src="/assets/NexBEE.JPG"
                     alt="Md. Niamul Islam Tanay"
                     className="nb-booking-host-img"
                   />
