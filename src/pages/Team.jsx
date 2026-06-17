@@ -5,11 +5,11 @@ import { Reveal, StaggerReveal } from '../hooks/useInView'
 
 const team = [
   {
-    initials: 'NT', name: 'Md. Niamul Islam Tanay', role: 'Founder & Creative Director',
+    initials: 'NT', name: 'MD Niamul Islam Tanay', role: 'Founder & Chief Executive Officer',
     color: '#00f0ff', grad: 'linear-gradient(135deg,#0070f3,#00f0ff)',
     photo: '/assets/NexBEE.JPG',
-    bio: 'Obsessed with the intersection of strategy and craft. Has led design and brand work for startups across South Asia and beyond.',
-    skills: ['Brand Strategy','UI/UX','Creative Direction','Figma'],
+    bio: 'Leads the overall direction and operations of NexbeeLabs, defining strategic priorities, guiding business growth, and ensuring the delivery of reliable and high-quality IT and digital solutions. Maintains strong relationships with clients and partners, working closely with leadership and technical teams to uphold professional standards and long-term value.',
+    skills: ['Strategic Leadership','Business Development','Client Relations','Operations'],
     links: { linkedin: '#', portfolio: '#' },
   },
   {
@@ -21,35 +21,59 @@ const team = [
     links: { linkedin: '#', portfolio: '#' },
   },
   {
-    initials: 'SI', name: 'Sanjida Islam', role: 'Growth & SEO Strategist',
+    initials: 'TI', name: 'Md. Tarikul Islam', role: 'Team Lead',
+    color: '#0070f3', grad: 'linear-gradient(135deg,#0070f3,#00f0ff)',
+    photo: '',
+    bio: 'Provides overall technical leadership and project oversight. Responsible for planning and coordinating development activities, ensuring best practices, resolving technical challenges, and delivering projects on time with a strong focus on quality and reliability.',
+    skills: ['Technical Leadership','Project Management','Best Practices','Quality Assurance'],
+    links: { linkedin: '#', portfolio: '#' },
+  },
+  {
+    initials: 'RA', name: 'Rashedul Alom', role: 'Senior Software Engineer',
     color: '#ff0080', grad: 'linear-gradient(135deg,#ff0080,#ffb86c)',
-    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
-    bio: 'Data-driven marketer with a creative streak. Specialises in technical SEO and paid campaigns that actually convert.',
-    skills: ['Technical SEO','Google Ads','Analytics','Ahrefs'],
+    photo: '',
+    bio: 'Designs and maintains complex software systems, translating business requirements into scalable and secure solutions. Oversees code quality, mentors engineers, and resolves critical technical issues to ensure system performance and stability.',
+    skills: ['System Design','Software Architecture','Code Review','Mentoring'],
     links: { linkedin: '#', portfolio: '#' },
   },
   {
-    initials: 'NR', name: 'Nadia Rahman', role: 'Social Media Lead',
-    color: '#ffb86c', grad: 'linear-gradient(135deg,#ffb86c,#ff0080)',
-    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
-    bio: 'Storyteller turned social strategist. Builds content systems that scale and communities that actually stick.',
-    skills: ['Instagram','Content Creation','Community Mgmt','CapCut'],
-    links: { linkedin: '#', portfolio: '#' },
-  },
-  {
-    initials: 'RA', name: 'Rakin Ahmed', role: 'Motion & Brand Designer',
-    color: '#0070f3', grad: 'linear-gradient(135deg,#0070f3,#7928ca)',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
-    bio: 'Motion designer who believes animation should have a purpose. Turns static brands into living, breathing identities.',
-    skills: ['After Effects','Motion Design','Illustrator','Lottie'],
-    links: { linkedin: '#', portfolio: '#' },
-  },
-  {
-    initials: 'TC', name: 'Tasnim Chowdhury', role: 'Project & Client Lead',
+    initials: 'AR', name: 'Azizur Rahman', role: 'Full Stack Software Engineer',
     color: '#00c896', grad: 'linear-gradient(135deg,#00c896,#0070f3)',
-    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&h=700&q=80&crop=faces',
-    bio: 'Keeps every project on track and every client in the loop. The reason nothing falls through the cracks at NexbeeLabs.',
-    skills: ['Project Mgmt','Client Success','Notion','Scrum'],
+    photo: '',
+    bio: 'Delivers end-to-end application development across frontend and backend systems. Focuses on performance, security, API integration, and building reliable, user-friendly applications in close collaboration with the team.',
+    skills: ['Frontend','Backend','API Integration','Security'],
+    links: { linkedin: '#', portfolio: '#' },
+  },
+  {
+    initials: 'JR', name: 'Jehan Rahman', role: 'Senior Database Engineer',
+    color: '#ffb86c', grad: 'linear-gradient(135deg,#ffb86c,#ff0080)',
+    photo: '',
+    bio: 'Leads database design, optimisation, and performance management. Ensures data security, compliance, and high availability while supporting critical production systems and mentoring database engineers.',
+    skills: ['Database Design','Performance Optimisation','Data Security','High Availability'],
+    links: { linkedin: '#', portfolio: '#' },
+  },
+  {
+    initials: 'MR', name: 'Muntasir Rahman', role: 'Database Engineer',
+    color: '#6c5ce7', grad: 'linear-gradient(135deg,#6c5ce7,#a29bfe)',
+    photo: '',
+    bio: 'Supports database development and maintenance, including SQL queries, data processing, reporting, and performance tuning, ensuring data consistency and system reliability.',
+    skills: ['SQL','Data Processing','Reporting','Performance Tuning'],
+    links: { linkedin: '#', portfolio: '#' },
+  },
+  {
+    initials: 'AM', name: 'Apple Mahmadud', role: 'UI & Frontend Designer',
+    color: '#fd79a8', grad: 'linear-gradient(135deg,#fd79a8,#ff0080)',
+    photo: '',
+    bio: 'Designs intuitive and visually refined user interfaces, transforming concepts into responsive frontend layouts while maintaining consistent design standards and strong user experience.',
+    skills: ['UI Design','Frontend','Responsive Design','UX'],
+    links: { linkedin: '#', portfolio: '#' },
+  },
+  {
+    initials: 'MU', name: 'Mahatab Uddin', role: 'IT Engineer',
+    color: '#00b894', grad: 'linear-gradient(135deg,#00b894,#00cec9)',
+    photo: '',
+    bio: 'Manages and maintains IT infrastructure, including servers, networks, and systems. Ensures operational stability, security, and reliable day-to-day technical support.',
+    skills: ['Infrastructure','Server Management','Networking','IT Support'],
     links: { linkedin: '#', portfolio: '#' },
   },
 ]
@@ -188,8 +212,9 @@ function TeamCards() {
       <div className="nb-container">
         <Reveal>
           <div className="nb-section-head" style={{marginBottom:48}}>
-            <Badge>Meet the team</Badge>
-            <h2 className="nb-h2 nb-nowrap-desk">The people behind <span className="nb-grad">every project</span></h2>
+            <Badge>Our Team</Badge>
+            <h2 className="nb-h2">Our <span className="nb-grad">Team</span></h2>
+            <p className="nb-section-sub" style={{marginTop:16,maxWidth:640}}>Nexbee is led by experienced professionals with strong technical expertise and a shared commitment to delivering reliable, secure, and high-quality digital solutions.</p>
           </div>
         </Reveal>
         <StaggerReveal className="nb-team-profile-grid" step={0.08}>
@@ -197,7 +222,13 @@ function TeamCards() {
             <div key={m.initials} className="nb-portrait-card">
               {/* Photo */}
               <div className="nb-portrait-img-wrap">
-                <img src={m.photo} alt={m.name} className="nb-portrait-img"/>
+                {m.photo ? (
+                  <img src={m.photo} alt={m.name} className="nb-portrait-img"/>
+                ) : (
+                  <div className="nb-portrait-img" style={{background:m.grad,display:'flex',alignItems:'center',justifyContent:'center',fontSize:'2.5rem',fontWeight:700,color:'#fff',letterSpacing:1}}>
+                    {m.initials}
+                  </div>
+                )}
                 <div className="nb-portrait-img-overlay" style={{background:`linear-gradient(to top,rgba(10,10,14,.85) 0%,transparent 60%)`}}/>
                 <div className="nb-portrait-accent" style={{background:m.color}}/>
               </div>
