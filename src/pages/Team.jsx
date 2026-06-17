@@ -13,11 +13,11 @@ const team = [
     links: { linkedin: '#', portfolio: '#' },
   },
   {
-    initials: 'MS', name: 'Md. Mehadi Hasan Shawon', role: 'Lead Developer',
+    initials: 'MS', name: 'Md. Mehadi Hasan Shawon', role: 'Head of Technology & Innovation',
     color: '#7928ca', grad: 'linear-gradient(135deg,#7928ca,#ff0080)',
     photo: '/assets/Shawon.jpg',
-    bio: 'Full-stack developer with a frontend heart. Writes clean, performant code that developers actually enjoy reading.',
-    skills: ['Next.js','TypeScript','Node.js','Tailwind'],
+    bio: 'Drives the technical vision and innovation strategy of NexbeeLabs. Oversees architecture decisions, engineering standards, and the adoption of emerging technologies to build scalable, secure, and future-ready solutions. Bridges the gap between business goals and technical execution, ensuring every product delivered meets the highest standards of quality and reliability.',
+    skills: ['Technical Strategy','System Architecture','Full Stack Development','Team Leadership','Cloud Infrastructure','Security & Scalability'],
     links: { linkedin: '#', portfolio: '#' },
   },
   {
