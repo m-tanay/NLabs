@@ -4,7 +4,7 @@ import Badge from '../components/Badge'
 import { NavLink } from 'react-router-dom'
 import { Reveal } from '../hooks/useInView'
 
-const FORMSPREE_ID   = 'YOUR_FORMSPREE_ID'   // Replace with your Formspree form ID
+const FORMSPREE_ID = 'mrevjlll'
 const CALENDLY_URL   = 'https://calendly.com/YOUR_USERNAME/30min' // Replace with your Calendly link
 
 const services = [
