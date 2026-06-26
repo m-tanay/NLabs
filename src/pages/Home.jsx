@@ -169,11 +169,14 @@ const caseStudies = [
 
 function SitePreview({ url, title }) {
   const containerRef = useRef(null)
-  const [scale, setScale] = useState(0.5)
+  const [scale, setScale] = useState(0.3)
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
-    const update = () => setScale(el.offsetWidth / 1280)
+    const update = () => {
+      const w = el.offsetWidth || el.getBoundingClientRect().width
+      if (w > 0) setScale(w / 1280)
+    }
     update()
     const ro = new ResizeObserver(update)
     ro.observe(el)
@@ -217,11 +220,8 @@ function FeaturedProjects() {
               >
                 {/* Image */}
                 <div className="nb-fw-img-side">
-                  {p.url ? (
-                    <SitePreview url={p.url} title={p.client} />
-                  ) : (
-                    <img src={p.image} alt={p.client} className="nb-fw-img"/>
-                  )}
+                  <img src={p.image} alt={p.client} className="nb-fw-img"/>
+                  {p.url && <SitePreview url={p.url} title={p.client} />}
                   <div className="nb-fw-img-overlay"/>
                   <span className="nb-fw-num">{String(i+1).padStart(2,'0')}</span>
                 </div>
