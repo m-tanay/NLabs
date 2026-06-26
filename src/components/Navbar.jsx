@@ -25,7 +25,7 @@ export default function Navbar({ onOpenContact }) {
     <header className={`nb-nav ${scrolled ? 'nb-nav-scrolled' : ''}`}>
       <div className="nb-nav-inner">
         <NavLink to="/" className="nb-logo" onClick={() => setOpen(false)}>
-          <span className="nb-grad">Nexbee</span>Labs
+          <img src="/assets/NexbeeLabs Logo-Photoroom croped.png" alt="NexbeeLabs" className="nb-logo-img" />
         </NavLink>
         <nav className="nb-nav-links">
           {links.map((l) => (

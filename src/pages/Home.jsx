@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import {
   ArrowRight, ChevronRight, Zap, Rocket, Globe, PenTool, Layers,
   TrendingUp, MessageCircle, ShoppingBag, Target, Shield, Users,
@@ -21,7 +21,7 @@ function Hero() {
       <div className="nb-orb nb-orb-blue"   style={{ width:500, height:500, top:100,  right:-100 }} />
       <div className="nb-hero-grid">
         <div className="nb-hero-text">
-          <Badge>Digital Agency · Dhaka, Bangladesh</Badge>
+          <Badge>Digital Agency · Sydney, Australia</Badge>
           <h1 className="nb-hero-h1">
             We Build Digital<br />
             Products That<br />
@@ -132,26 +132,28 @@ function Services() {
 /* ─── Featured Projects ─────────────────────────────────────────────────── */
 const caseStudies = [
   {
-    id: 'nexastore',
+    id: 'hobinh',
     category: 'Web Design & Development',
-    client: 'NexaStore',
-    headline: 'Rebuilt for conversion from the ground up',
-    body: 'A complete e-commerce redesign that moved the needle fast — new architecture, faster load times, and a checkout flow that actually converts.',
+    client: 'E-commerce',
+    headline: 'A WordPress store built to convert from day one',
+    body: 'Full e-commerce build with a conversion-focused layout, fast load times, and a checkout flow that turns browsers into buyers.',
     metric: '+38%', metricLabel: 'Conversion rate',
-    tags: ['Next.js', 'Shopify', 'UI/UX', 'CRO'],
+    tags: ['WordPress', 'WooCommerce', 'UI/UX', 'CRO'],
     accent: '#00f0ff',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     featured: true,
+    url: 'https://hobinh.com/',
   },
   {
-    id: 'orbit',
-    category: 'UI/UX Design',
-    client: 'Orbit',
-    headline: 'Turning complexity into clarity for a B2B SaaS',
-    metric: '60%', metricLabel: 'Faster onboarding',
-    tags: ['Figma', 'React', 'Data Viz'],
+    id: 'healthcare',
+    category: 'Web Design & Development',
+    client: 'Healthcare',
+    headline: 'A trusted online presence for a life-changing service',
+    metric: '2×', metricLabel: 'Enquiry rate',
+    tags: ['WordPress', 'UI/UX', 'Web Design'],
     accent: '#7928ca',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    url: 'https://sovereignsurrogacy.com/',
   },
   {
     id: 'flare',
@@ -164,6 +166,32 @@ const caseStudies = [
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
   },
 ]
+
+function SitePreview({ url, title }) {
+  const containerRef = useRef(null)
+  const [scale, setScale] = useState(0.5)
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    const update = () => setScale(el.offsetWidth / 1280)
+    update()
+    const ro = new ResizeObserver(update)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+  return (
+    <div ref={containerRef} style={{position:'absolute',inset:0,overflow:'hidden'}}>
+      <iframe
+        src={url}
+        title={title}
+        className="nb-fw-iframe"
+        style={{transform:`scale(${scale})`}}
+        scrolling="no"
+        tabIndex={-1}
+      />
+    </div>
+  )
+}
 
 function FeaturedProjects() {
   return (
@@ -180,10 +208,20 @@ function FeaturedProjects() {
         <div className="nb-fw-list">
           {caseStudies.map((p, i) => (
             <Reveal key={p.id} delay={`${i * 0.08}s`}>
-              <div className={`nb-fw-item ${i % 2 === 1 ? 'nb-fw-rev' : ''}`}>
+              <a
+                className={`nb-fw-item ${i % 2 === 1 ? 'nb-fw-rev' : ''}`}
+                href={p.url || undefined}
+                target={p.url ? '_blank' : undefined}
+                rel={p.url ? 'noopener noreferrer' : undefined}
+                style={p.url ? {cursor:'pointer',textDecoration:'none',color:'inherit'} : undefined}
+              >
                 {/* Image */}
                 <div className="nb-fw-img-side">
-                  <img src={p.image} alt={p.client} className="nb-fw-img"/>
+                  {p.url ? (
+                    <SitePreview url={p.url} title={p.client} />
+                  ) : (
+                    <img src={p.image} alt={p.client} className="nb-fw-img"/>
+                  )}
                   <div className="nb-fw-img-overlay"/>
                   <span className="nb-fw-num">{String(i+1).padStart(2,'0')}</span>
                 </div>
@@ -202,7 +240,7 @@ function FeaturedProjects() {
                   </div>
                   <div className="nb-fw-bar" style={{background:p.accent}}/>
                 </div>
-              </div>
+              </a>
             </Reveal>
           ))}
         </div>
@@ -474,8 +512,8 @@ function TechStack() {
 /* ─── Testimonials ──────────────────────────────────────────────────────── */
 function Testimonials() {
   const items = [
-    { q:"I wasn't sure what to expect from a new agency, but NexbeeLabs delivered a website that outperforms everything we had before. Their attention to detail is unlike anything I've seen.", n:'Arif Rahman',    r:'Founder, NexaStore',       i:'AR', metric:'+38% conversion', grad:'linear-gradient(135deg,#0070f3,#00f0ff)' },
-    { q:"They pushed back on ideas that weren't right and brought better ones to the table. That kind of honesty is what separates good agencies from great ones.",                              n:'Tasnim Hossain', r:'Co-founder, Orbit',        i:'TH', metric:'Dashboard rebuild', grad:'linear-gradient(135deg,#7928ca,#ff0080)' },
+    { q:"I wasn't sure what to expect from a new agency, but NexbeeLabs delivered a website that outperforms everything we had before. Their attention to detail is unlike anything I've seen.", n:'Arif Rahman',    r:'Founder, E-commerce',       i:'AR', metric:'+38% conversion', grad:'linear-gradient(135deg,#0070f3,#00f0ff)' },
+    { q:"They pushed back on ideas that weren't right and brought better ones to the table. That kind of honesty is what separates good agencies from great ones.",                              n:'Tasnim Hossain', r:'Co-founder, Healthcare',        i:'TH', metric:'Dashboard rebuild', grad:'linear-gradient(135deg,#7928ca,#ff0080)' },
     { q:'Fast, communicative, and genuinely invested in our success. Our Instagram went from background noise to a real channel for our business in just a few months.',                        n:'Sadia Khan',     r:'CMO, Vyne Apparel',         i:'SK', metric:'6× engagement',    grad:'linear-gradient(135deg,#ff0080,#ffb86c)' },
     { q:"The brand identity they built for us gave our restaurant a voice we didn't know we were missing. Every guest comments on it now.",                                                     n:'Nusrat Jahan',   r:'Co-founder, Flare Kitchen', i:'NJ', metric:'Identity + web',   grad:'linear-gradient(135deg,#00f0ff,#7928ca)' },
   ]

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowUpRight, Mail, Clock, Globe, Send, Linkedin, Instagram, Facebook, Dribbble, CheckCircle, Sparkles, Star, User, Building2 } from 'lucide-react'
+import { ArrowUpRight, Mail, Clock, Globe, Phone, Send, Linkedin, Instagram, Facebook, Dribbble, CheckCircle, Sparkles, Star, User, Building2 } from 'lucide-react'
 import Badge from '../components/Badge'
 import { NavLink } from 'react-router-dom'
 import { Reveal } from '../hooks/useInView'
@@ -272,15 +272,16 @@ export default function Contact() {
 
                   <div className="nb-contact-aside-details">
                     {[
-                      { Icon: Mail,  val: 'hello@nexbeelabs.com',   color:'#00f0ff' },
-                      { Icon: Clock, val: 'Sun–Thu, 9AM–7PM BST',   color:'#7928ca' },
-                      { Icon: Globe, val: 'Dhaka, BD · Remote-first', color:'#ff0080' },
+                      { Icon: Mail,  val: 'hello@nexbeelabs.com',      href: 'mailto:hello@nexbeelabs.com', color:'#00f0ff' },
+                      { Icon: Phone, val: '+61 415 340 554',           href: 'tel:+61415340554',            color:'#7928ca' },
+                      { Icon: Clock, val: 'Mon–Fri, 9AM–6PM AEST',    href: null,                          color:'#ff0080' },
+                      { Icon: Globe, val: 'Sydney, AU · Remote-first', href: null,                          color:'#00f0ff' },
                     ].map(d => (
                       <div key={d.val} className="nb-contact-detail-pill">
                         <div className="nb-contact-detail-icon" style={{background:`${d.color}15`,color:d.color,border:`1px solid ${d.color}30`}}>
                           <d.Icon size={13}/>
                         </div>
-                        <span>{d.val}</span>
+                        {d.href ? <a href={d.href} style={{color:'inherit',textDecoration:'none'}}>{d.val}</a> : <span>{d.val}</span>}
                       </div>
                     ))}
                   </div>

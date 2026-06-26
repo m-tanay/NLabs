@@ -73,6 +73,8 @@ button { font-family: inherit; cursor: pointer; }
 .nb-nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; padding: 1rem 0; transition: all .3s ease; background: rgba(15,23,42,0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.05); }
 .nb-nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; }
 .nb-logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; }
+.nb-logo-img { height: 44px; width: auto; display: block; object-fit: contain; }
+.nb-footer-logo .nb-logo-img { height: 40px; }
 .nb-nav-links { display: flex; gap: 2.25rem; }
 .nb-nav-link { color: rgba(255,255,255,0.7); font-size: .95rem; font-weight: 500; transition: color .2s ease; padding-bottom: .5rem; position: relative; }
 .nb-nav-link:hover { color: #fff; }
@@ -310,7 +312,10 @@ button { font-family: inherit; cursor: pointer; }
 .nb-footer-top { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; margin-bottom: 64px; }
 .nb-footer-brand { max-width: 320px; }
 .nb-footer-logo  { margin-bottom: 16px; }
-.nb-footer-desc  { color: rgba(255,255,255,.5); line-height: 1.7; margin-bottom: 28px; font-size: .92rem; }
+.nb-footer-desc  { color: rgba(255,255,255,.5); line-height: 1.7; margin-bottom: 20px; font-size: .92rem; }
+.nb-footer-contact { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.nb-footer-contact-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.55); font-size: .88rem; text-decoration: none; transition: color .2s; }
+.nb-footer-contact-item:hover { color: #fff; }
 .nb-footer-socials { display: flex; gap: 10px; }
 .nb-soc {
   width: 36px; height: 36px; border-radius: 10px;
@@ -359,6 +364,8 @@ button { font-family: inherit; cursor: pointer; }
   .nb-hero-stats { grid-template-columns: 1fr 1fr; }
   .nb-cta-strip { grid-template-columns: 1fr 1fr; }
   .nb-proc-grid { grid-template-columns: 1fr 1fr; }
+  .nb-logo-img { height: 48px; max-width: 170px; filter: brightness(1.4) drop-shadow(0 0 14px rgba(0,240,255,0.6)); }
+  .nb-footer-logo .nb-logo-img { height: 44px; max-width: 160px; filter: brightness(1.4) drop-shadow(0 0 14px rgba(0,240,255,0.6)); }
 }
 
 /* ══════════════════════════════════════════════
@@ -938,6 +945,12 @@ button { font-family: inherit; cursor: pointer; }
 .nb-fw-img {
   width: 100%; height: 100%; object-fit: cover; object-position: center;
   transition: transform .5s ease;
+}
+.nb-fw-iframe {
+  position: absolute; top: 0; left: 0;
+  width: 1280px; height: 900px;
+  border: none; pointer-events: none;
+  transform-origin: top left;
 }
 .nb-fw-item:hover .nb-fw-img { transform: scale(1.04); }
 .nb-fw-img-overlay {
