@@ -83,15 +83,15 @@ button { font-family: inherit; cursor: pointer; }
 .nb-nav .nb-btn { padding: 12px 22px; font-size: .95rem; }
 
 /* ── Hero ── */
-.nb-hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 180px 0 100px; }
-.nb-hero-grid { max-width: 1300px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; position: relative; z-index: 10; width: 100%; }
+.nb-hero { height: 100vh; min-height: 600px; display: flex; align-items: center; position: relative; overflow: hidden; padding: 90px 0 40px; }
+.nb-hero-grid { max-width: 1300px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; position: relative; z-index: 10; width: 100%; }
 .nb-hero-text { display: flex; flex-direction: column; align-items: flex-start; }
-.nb-hero-h1 { font-size: clamp(3rem,5vw,5rem); font-weight: 800; line-height: 1.05; letter-spacing: -.04em; margin-bottom: 28px; color: #fff; }
-.nb-hero-sub { font-size: 1.125rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 36px; max-width: 540px; }
-.nb-hero-cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 48px; }
-.nb-hero-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; width: 100%; max-width: 540px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); }
-.nb-hero-stat-v { font-size: 32px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
-.nb-hero-stat-l { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,0.5); margin-top: 6px; font-weight: 600; }
+.nb-hero-h1 { font-size: clamp(2.2rem,4vw,4rem); font-weight: 800; line-height: 1.05; letter-spacing: -.04em; margin-bottom: 16px; color: #fff; }
+.nb-hero-sub { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 24px; max-width: 520px; }
+.nb-hero-cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 28px; }
+.nb-hero-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; width: 100%; max-width: 540px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); }
+.nb-hero-stat-v { font-size: 26px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.nb-hero-stat-l { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,0.5); margin-top: 4px; font-weight: 600; }
 
 .nb-hero-visual { position: relative; width: 100%; display: flex; justify-content: center; }
 .nb-mock-panel { width: 100%; max-width: 480px; background: rgba(10,10,10,0.85); border: 1px solid rgba(255,255,255,.10); border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.05) inset; backdrop-filter: blur(20px); position: relative; z-index: 5; animation: nb-float 6s ease-in-out infinite; }
@@ -360,8 +360,12 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ── Responsive ── */
 @media(max-width:1024px){
-  .nb-hero-grid { grid-template-columns: 1fr; gap: 80px; text-align: center; }
+  .nb-hero { height: auto; min-height: 0; padding: 100px 0 60px; }
+  .nb-hero-grid { grid-template-columns: 1fr; gap: 0; text-align: center; }
   .nb-hero-text { align-items: center; }
+  .nb-hero-visual { display: none; }
+  .nb-hero-h1 { font-size: clamp(2rem,5vw,3.2rem); }
+  .nb-hero-sub { font-size: .95rem; margin-bottom: 20px; }
   .nb-svc-grid { grid-template-columns: 1fr 1fr; }
   .nb-bento { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .nb-bento-tall,.nb-bento-wide { grid-column: span 2; grid-row: span 1; min-height: 320px; }
@@ -373,7 +377,12 @@ button { font-family: inherit; cursor: pointer; }
 @media(max-width:640px){
   .nb-svc-grid,.nb-bento,.nb-footer-cols { grid-template-columns: 1fr; }
   .nb-bento-tall,.nb-bento-wide { grid-column: span 1; }
-  .nb-hero-stats { grid-template-columns: 1fr 1fr; }
+  .nb-hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .nb-hero { height: auto; min-height: 0; padding: 120px 0 48px; }
+  .nb-hero-h1 { font-size: clamp(1.8rem,7vw,2.6rem); margin-bottom: 12px; }
+  .nb-hero-sub { font-size: .88rem; margin-bottom: 18px; }
+  .nb-hero-cta { margin-bottom: 20px; }
+  .nb-hero-stat-v { font-size: 22px; }
   .nb-cta-strip { grid-template-columns: 1fr 1fr; }
   .nb-logo-img { height: 48px; max-width: 170px; filter: brightness(1.4) drop-shadow(0 0 14px rgba(0,240,255,0.6)); }
   /* Process — vertical timeline on mobile */
