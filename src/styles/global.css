@@ -83,7 +83,7 @@ button { font-family: inherit; cursor: pointer; }
 .nb-nav .nb-btn { padding: 12px 22px; font-size: .95rem; }
 
 /* ── Hero ── */
-.nb-hero { height: 100vh; min-height: 600px; display: flex; align-items: center; position: relative; overflow: hidden; padding: 90px 0 40px; }
+.nb-hero { height: 100vh; min-height: 600px; display: flex; align-items: center; position: relative; overflow: hidden; padding: 90px 0 40px; background: #05050f; }
 .nb-hero-grid { max-width: 1300px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; position: relative; z-index: 10; width: 100%; }
 .nb-hero-text { display: flex; flex-direction: column; align-items: flex-start; }
 .nb-hero-h1 { font-size: clamp(2.2rem,4vw,4rem); font-weight: 800; line-height: 1.05; letter-spacing: -.04em; margin-bottom: 16px; color: #fff; }
@@ -378,7 +378,7 @@ button { font-family: inherit; cursor: pointer; }
   .nb-svc-grid,.nb-bento,.nb-footer-cols { grid-template-columns: 1fr; }
   .nb-bento-tall,.nb-bento-wide { grid-column: span 1; }
   .nb-hero-stats { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .nb-hero { height: auto; min-height: 0; padding: 120px 0 24px; }
+  .nb-hero { height: auto; min-height: 0; padding: 120px 0 24px; background: #05050f; }
   .nb-hero-h1 { font-size: clamp(2.4rem,8vw,3.2rem); margin-bottom: 16px; }
   .nb-hero-sub { font-size: .95rem; margin-bottom: 28px; }
   .nb-hero-cta { margin-bottom: 32px; gap: 12px; }
