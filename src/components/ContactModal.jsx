@@ -26,7 +26,7 @@ const TIME_SLOTS = ['9:00 AM','10:00 AM','11:00 AM','1:00 PM','2:00 PM','3:00 PM
 const TRUST = [
   { Icon: Zap,   text: 'Reply within 24 hours' },
   { Icon: Phone, text: 'Free 30-min discovery call' },
-  { Icon: Globe, text: 'Remote-first · Global clients' },
+  { Icon: Globe, text: 'Punchbowl, NSW 2196, Australia 🇦🇺' },
 ]
 
 function getWeekdays(count = 10) {

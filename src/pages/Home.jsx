@@ -23,14 +23,14 @@ function Hero() {
       <div className="nb-orb nb-orb-blue"   style={{ width:500, height:500, top:100,  right:-100 }} />
       <div className="nb-hero-grid">
         <div className="nb-hero-text">
-          <Badge>Digital Agency · Sydney, Australia</Badge>
+          <Badge>Enterprise IT Solution · Sydney, Australia</Badge>
           <h1 className="nb-hero-h1">
             We Build Digital<br />
             Products That<br />
             <span className="nb-grad">Actually Work</span>
           </h1>
           <p className="nb-hero-sub">
-            NexbeeLabs is a complete business solutions agency — from websites and brands to AI agents, automation, and intelligent chatbots. We build digital products and systems that actually work for your business.
+            Nexbee partners with forward-thinking businesses to design, build, and manage digital systems that deliver long-term value.
           </p>
           <div className="nb-hero-cta">
             <a href="#contact" className="nb-btn nb-btn-light">Start a Project <ArrowRight size={16} /></a>

@@ -14,7 +14,7 @@ export default function Footer() {
             <NavLink to="/" className="nb-logo nb-footer-logo">
               <img src="/assets/NexbeeLabs Logo-Photoroom croped.png" alt="NexbeeLabs" className="nb-logo-img" />
             </NavLink>
-            <p className="nb-footer-desc">Building digital products that actually work. Based in Sydney, Australia. Working globally.</p>
+            <p className="nb-footer-desc">Nexbee provides technology and digital solutions designed to support modern businesses.</p>
             <div className="nb-footer-contact">
               <a href="mailto:hello@nexbeelabs.com" className="nb-footer-contact-item">
                 <Mail size={13} /><span>hello@nexbeelabs.com</span>

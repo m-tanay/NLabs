@@ -348,9 +348,9 @@ export default function Contact() {
                   <div className="nb-contact-aside-details">
                     {[
                       { Icon: Mail,  val: 'hello@nexbeelabs.com',      href: 'mailto:hello@nexbeelabs.com', color:'#00f0ff' },
-                      { Icon: Phone, val: '+61 415 340 554',           href: 'tel:+61415340554',            color:'#7928ca' },
-                      { Icon: Clock, val: 'Mon–Fri, 9AM–6PM AEST',    href: null,                          color:'#ff0080' },
-                      { Icon: Globe, val: 'Sydney, AU · Remote-first', href: null,                          color:'#00f0ff' },
+                      { Icon: Phone, val: '+61 415 340 554',                          href: 'tel:+61415340554',            color:'#7928ca' },
+                      { Icon: Clock, val: 'Mon–Sun, 8:00 AM – 7:00 PM AEST',        href: null,                          color:'#ff0080' },
+                      { Icon: Globe, val: '30 South Terrace, Punchbowl 2196, NSW 🇦🇺', href: null,                       color:'#00f0ff' },
                     ].map(d => (
                       <div key={d.val} className="nb-contact-detail-pill">
                         <div className="nb-contact-detail-icon" style={{background:`${d.color}15`,color:d.color,border:`1px solid ${d.color}30`}}>
