@@ -25,9 +25,7 @@ function Hero() {
         <div className="nb-hero-text">
           <Badge>Enterprise IT Solution · Sydney, Australia</Badge>
           <h1 className="nb-hero-h1">
-            We Build Digital<br />
-            Products That<br />
-            <span className="nb-grad">Actually Work</span>
+            Technology Solutions Built for <span className="nb-grad">Performance, Security & Growth</span>
           </h1>
           <p className="nb-hero-sub">
             Nexbee partners with forward-thinking businesses to design, build, and manage digital systems that deliver long-term value.
