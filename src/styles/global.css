@@ -377,12 +377,12 @@ button { font-family: inherit; cursor: pointer; }
 @media(max-width:640px){
   .nb-svc-grid,.nb-bento,.nb-footer-cols { grid-template-columns: 1fr; }
   .nb-bento-tall,.nb-bento-wide { grid-column: span 1; }
-  .nb-hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .nb-hero { height: auto; min-height: 0; padding: 120px 0 48px; }
-  .nb-hero-h1 { font-size: clamp(1.8rem,7vw,2.6rem); margin-bottom: 12px; }
-  .nb-hero-sub { font-size: .88rem; margin-bottom: 18px; }
-  .nb-hero-cta { margin-bottom: 20px; }
-  .nb-hero-stat-v { font-size: 22px; }
+  .nb-hero-stats { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .nb-hero { height: auto; min-height: 100svh; min-height: 100vh; padding: 120px 0 60px; }
+  .nb-hero-h1 { font-size: clamp(2.4rem,8vw,3.2rem); margin-bottom: 16px; }
+  .nb-hero-sub { font-size: .95rem; margin-bottom: 28px; }
+  .nb-hero-cta { margin-bottom: 32px; gap: 12px; }
+  .nb-hero-stat-v { font-size: 28px; }
   .nb-cta-strip { grid-template-columns: 1fr 1fr; }
   .nb-logo-img { height: 48px; max-width: 170px; filter: brightness(1.4) drop-shadow(0 0 14px rgba(0,240,255,0.6)); }
   /* Process — vertical timeline on mobile */
