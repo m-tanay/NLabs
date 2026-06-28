@@ -1,12 +1,42 @@
 import { useState } from 'react'
-import { ArrowRight, Globe, PenTool, Layers, TrendingUp, MessageCircle, ShoppingBag, CheckCircle, ChevronRight, Zap, DollarSign, HeartHandshake, Search, MessageSquare, Phone, CreditCard, LifeBuoy, ChevronDown } from 'lucide-react'
+import { ArrowRight, Globe, PenTool, Layers, TrendingUp, MessageCircle, ShoppingBag, CheckCircle, ChevronRight, Zap, DollarSign, HeartHandshake, Search, MessageSquare, Phone, CreditCard, LifeBuoy, ChevronDown, Bot, Cpu, Workflow } from 'lucide-react'
 import Badge from '../components/Badge'
 import { Reveal, StaggerReveal } from '../hooks/useInView'
 import { NavLink } from 'react-router-dom'
 
 const services = [
   {
-    Icon: Globe, accent: '#00f0ff', num: '01',
+    Icon: Cpu, accent: '#00f0ff', num: '01',
+    title: 'AI Agents & Intelligent Automation',
+    tagline: 'AI that works for your business 24/7.',
+    body: 'We build custom AI agents that think, decide, and act — handling complex tasks autonomously so your team can focus on what matters. From lead qualification to data processing, we turn repetitive work into automated workflows.',
+    includes: ['Custom AI agent development','Multi-step reasoning pipelines','CRM & tool integrations','Data extraction & processing','Automated reporting & alerts','Ongoing monitoring & refinement'],
+    tags: ['OpenAI','Claude API','LangChain','n8n','Python','APIs'],
+    price: 'From $1,200',
+    timeline: '3–6 weeks',
+  },
+  {
+    Icon: Workflow, accent: '#7928ca', num: '02',
+    title: 'Business Process Automation',
+    tagline: 'Eliminate repetitive work. Scale faster.',
+    body: 'We map your manual processes and replace them with automated workflows — from invoice handling and email triage to cross-platform data sync. Built with no-code and custom solutions that your team can actually maintain.',
+    includes: ['Process audit & workflow mapping','Automation build (n8n / Make / Zapier)','Cross-platform data sync','Custom webhook & API integrations','Error handling & fallback logic','Team training & documentation'],
+    tags: ['n8n','Make','Zapier','REST APIs','Webhooks','Google Workspace'],
+    price: 'From $800',
+    timeline: '2–4 weeks',
+  },
+  {
+    Icon: Bot, accent: '#ff0080', num: '03',
+    title: 'AI Chatbots & Virtual Assistants',
+    tagline: 'Conversations that convert, around the clock.',
+    body: 'We build intelligent chatbots trained on your business — for customer support, lead capture, bookings, or internal helpdesks. Embedded on your website or integrated into WhatsApp, Messenger, or Slack.',
+    includes: ['Custom chatbot design & training','Knowledge base integration','Live handoff to human agent','WhatsApp / web / Slack deployment','Conversation analytics dashboard','Monthly retraining & updates'],
+    tags: ['OpenAI','Dialogflow','Voiceflow','WhatsApp API','RAG','Embeddings'],
+    price: 'From $900',
+    timeline: '2–4 weeks',
+  },
+  {
+    Icon: Globe, accent: '#00f0ff', num: '04',
     title: 'Web Design & Development',
     tagline: 'Websites that convert visitors into customers.',
     body: 'We build fast, beautiful websites from scratch — no templates, no page builders. Every project starts with strategy and ends with a site that actually works for your business.',
@@ -16,7 +46,7 @@ const services = [
     timeline: '4–6 weeks',
   },
   {
-    Icon: PenTool, accent: '#7928ca', num: '02',
+    Icon: PenTool, accent: '#7928ca', num: '05',
     title: 'Brand Identity & Strategy',
     tagline: 'A brand system that holds together everywhere.',
     body: 'Logo, colour palette, typography, tone of voice, and full brand guidelines. We don\'t just make things look nice — we create a visual language that communicates who you are.',
@@ -26,7 +56,7 @@ const services = [
     timeline: '2–3 weeks',
   },
   {
-    Icon: Layers, accent: '#ff0080', num: '03',
+    Icon: Layers, accent: '#ff0080', num: '06',
     title: 'UI/UX Design',
     tagline: 'Interfaces that make sense the first time.',
     body: 'From user research to polished prototypes. We design digital products that are intuitive, accessible, and genuinely delightful to use — then hand off specs that developers actually want to work with.',
@@ -36,7 +66,7 @@ const services = [
     timeline: '3–5 weeks',
   },
   {
-    Icon: TrendingUp, accent: '#00f0ff', num: '04',
+    Icon: TrendingUp, accent: '#00f0ff', num: '07',
     title: 'SEO & Digital Marketing',
     tagline: 'Get found. Get clicked. Get customers.',
     body: 'Technical SEO, content strategy, and paid campaigns that work together. We focus on strategies that compound over time — building assets, not just burning budget.',
@@ -46,7 +76,7 @@ const services = [
     timeline: 'Ongoing',
   },
   {
-    Icon: MessageCircle, accent: '#7928ca', num: '05',
+    Icon: MessageCircle, accent: '#7928ca', num: '08',
     title: 'Social Media Management',
     tagline: 'Content that builds a real audience.',
     body: 'Strategy, creation, and community management across Instagram, LinkedIn, and Facebook. We make content that fits your brand and actually resonates with your audience.',
@@ -56,7 +86,7 @@ const services = [
     timeline: 'Ongoing',
   },
   {
-    Icon: ShoppingBag, accent: '#ff0080', num: '06',
+    Icon: ShoppingBag, accent: '#ff0080', num: '09',
     title: 'E-Commerce Solutions',
     tagline: 'Online stores built to sell.',
     body: 'Shopify or WooCommerce stores designed for conversion. From product pages to checkout flows, every detail is optimised to turn browsers into buyers.',
@@ -82,7 +112,7 @@ function PageHero() {
       <div className="nb-container" style={{position:'relative',zIndex:10}}>
         <Badge>What We Do</Badge>
         <h1 className="nb-page-h1">Services built for <span className="nb-grad">real results</span></h1>
-        <p className="nb-page-sub">Everything your digital presence needs — from the first sketch to ongoing growth. Priced transparently, delivered properly.</p>
+        <p className="nb-page-sub">Everything your digital presence needs — from websites and branding to AI agents, automation, and intelligent chatbots. Priced transparently, delivered properly.</p>
         <div style={{display:'flex',gap:16,flexWrap:'wrap',marginTop:36}}>
           <NavLink to="/contact" className="nb-btn nb-btn-grad">Start a project <ArrowRight size={16}/></NavLink>
           <NavLink to="/portfolio" className="nb-btn nb-btn-ghost">See our work</NavLink>
@@ -254,6 +284,9 @@ function HowItWorks() {
 
 const faqs = [
   { q: 'Do you work with clients outside Bangladesh?',         a: 'Yes — all of our work is remote-friendly. We have clients across South Asia, the Middle East, Europe, and North America. Time zones haven\'t been an issue.' },
+  { q: 'What kinds of AI agents can you build?',               a: 'We build agents for lead qualification, customer support triage, data extraction, automated reporting, internal knowledge lookup, and more. If the task involves a repeatable decision or a sequence of steps, we can likely automate it with AI.' },
+  { q: 'Do I need technical knowledge to use an AI chatbot?',  a: 'No. We handle the full build, training, and deployment. We also provide a simple dashboard so you can see conversations and update the bot\'s knowledge base without any coding.' },
+  { q: 'Which automation tools do you use?',                   a: 'We work with n8n, Make (Integromat), and Zapier for no-code automation, and build custom Python or Node.js pipelines when more complexity is needed. We recommend the right tool based on your stack and budget.' },
   { q: 'Can I combine multiple services?',                     a: 'Absolutely. Most clients combine at least two services — web design with SEO, or branding with social media. We\'ll recommend what makes sense for your goals.' },
   { q: 'I\'m not sure which service I need. What do I do?',   a: 'Book a free discovery call. We\'ll ask questions, understand your situation, and give you an honest recommendation — even if it means pointing you somewhere else.' },
   { q: 'How do payments work?',                                a: 'For project-based work: 50% upfront, 50% on delivery. Monthly services are billed at the start of each month. We accept bank transfer and major cards.' },

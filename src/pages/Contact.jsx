@@ -8,6 +8,9 @@ const FORMSPREE_ID = 'mrevjlll'
 const CALENDLY_URL   = 'https://calendly.com/YOUR_USERNAME/30min' // Replace with your Calendly link
 
 const services = [
+  'AI Agents & Intelligent Automation',
+  'Business Process Automation',
+  'AI Chatbots & Virtual Assistants',
   'Web Design & Development',
   'Brand Identity & Strategy',
   'UI/UX Design',
@@ -75,24 +78,38 @@ function TrustSignals() {
   )
 }
 
-const complexityOptions = ['Basic', 'Standard', 'Advanced', 'Complex', 'Enterprise']
-const complexityMult    = [1, 1.5, 2.2, 3.2, 4.5]
-const teamOptions       = ['Solo', 'Duo', 'Small', 'Medium', 'Full team']
-const teamMult          = [1, 1.6, 2.2, 2.8, 3.6]
+const SERVICE_OPTIONS = [
+  { label: 'AI Agents',          base: 1200, color: '#00f0ff' },
+  { label: 'Automation',         base: 800,  color: '#7928ca' },
+  { label: 'AI Chatbot',         base: 900,  color: '#ff0080' },
+  { label: 'Web Design',         base: 800,  color: '#0070f3' },
+  { label: 'Brand Identity',     base: 500,  color: '#ff6b35' },
+  { label: 'UI/UX Design',       base: 1200, color: '#00d4a1' },
+  { label: 'SEO & Marketing',    base: 600,  color: '#ffd60a' },
+  { label: 'Social Media',       base: 450,  color: '#bf5af2' },
+  { label: 'E-Commerce',         base: 1500, color: '#30d158' },
+]
+const COMPLEXITY       = ['Basic', 'Standard', 'Advanced', 'Complex', 'Enterprise']
+const COMPLEXITY_MULT  = [1, 1.5, 2.2, 3.2, 4.8]
+const TIMELINE_LABELS  = ['1 wk', '2 wks', '4 wks', '6 wks', '8 wks', '12 wks']
+const TIMELINE_WEEKS   = [1, 2, 4, 6, 8, 12]
+const TIMELINE_MULT    = [1.9, 1.5, 1.2, 1.0, 0.95, 0.88]
+const TEAM_OPTIONS     = ['Solo', 'Duo', 'Small', 'Medium', 'Full team']
+const TEAM_MULT        = [1, 1.6, 2.2, 2.8, 3.6]
 
 function BudgetEstimator() {
-  const [timeline,   setTimeline]   = useState(4)
+  const [service,    setService]    = useState(3)
   const [complexity, setComplexity] = useState(1)
+  const [timeline,   setTimeline]   = useState(2)
   const [teamSize,   setTeamSize]   = useState(1)
 
-  const base = 350
-  const lo   = Math.round(timeline * base * complexityMult[complexity] * teamMult[teamSize] / 50) * 50
-  const hi   = Math.round(lo * 1.3 / 50) * 50
-  const fmt  = n => n >= 1000 ? `$${(n % 1000 === 0 ? n / 1000 : (n / 1000).toFixed(1))}K` : `$${n}`
-
-  const trackBg = (val, min, max, color) => {
+  const svc    = SERVICE_OPTIONS[service]
+  const lo     = Math.round(svc.base * COMPLEXITY_MULT[complexity] * TIMELINE_MULT[timeline] * TEAM_MULT[teamSize] / 50) * 50
+  const hi     = Math.round(lo * 1.35 / 50) * 50
+  const fmt    = n => n >= 1000 ? `$${Number.isInteger(n / 1000) ? n / 1000 : (n / 1000).toFixed(1)}K` : `$${n}`
+  const track  = (val, min, max, color) => {
     const pct = ((val - min) / (max - min)) * 100
-    return `linear-gradient(to right,${color} ${pct}%,rgba(255,255,255,.1) ${pct}%)`
+    return `linear-gradient(to right,${color} ${pct}%,rgba(255,255,255,.08) ${pct}%)`
   }
 
   return (
@@ -103,78 +120,136 @@ function BudgetEstimator() {
             <Badge>Budget Estimator</Badge>
             <h2 className="nb-h2" style={{marginTop:16}}>Get a ballpark <span className="nb-grad">in 10 seconds</span></h2>
             <p className="nb-section-sub" style={{margin:'16px auto 0',maxWidth:520}}>
-              Adjust the sliders — we'll calculate a realistic range instantly. No forms, no waiting.
+              Pick your service, set complexity and timeline — we'll calculate a realistic range instantly.
             </p>
           </div>
         </Reveal>
         <Reveal delay="0.1s">
           <div className="nb-estimator-card">
+
+            {/* ── Inputs ── */}
             <div className="nb-estimator-sliders">
+
+              {/* Service selector */}
               <div className="nb-estimator-group">
-                <div className="nb-estimator-row">
-                  <label className="nb-estimator-label">Timeline</label>
-                  <span className="nb-estimator-val" style={{color:'#00f0ff'}}>{timeline} {timeline === 1 ? 'week' : 'weeks'}</span>
-                </div>
-                <input type="range" min={1} max={12} step={1} value={timeline}
-                  onChange={e => setTimeline(+e.target.value)}
-                  className="nb-estimator-slider"
-                  style={{background: trackBg(timeline, 1, 12, '#00f0ff')}}
-                />
-                <div className="nb-estimator-ticks">
-                  <span>1 wk</span><span>4 wks</span><span>8 wks</span><span>12 wks</span>
+                <label className="nb-estimator-label" style={{marginBottom:12,display:'block'}}>Service</label>
+                <div className="nb-estimator-service-grid">
+                  {SERVICE_OPTIONS.map((s, i) => (
+                    <button
+                      key={s.label}
+                      type="button"
+                      onClick={() => setService(i)}
+                      className="nb-estimator-svc-btn"
+                      style={{
+                        borderColor:      service === i ? s.color : 'rgba(255,255,255,.08)',
+                        color:            service === i ? s.color : 'rgba(255,255,255,.55)',
+                        background:       service === i ? `${s.color}14` : 'rgba(255,255,255,.03)',
+                        boxShadow:        service === i ? `0 0 14px ${s.color}30` : 'none',
+                      }}
+                    >
+                      {s.label}
+                    </button>
+                  ))}
                 </div>
               </div>
+
+              {/* Complexity */}
               <div className="nb-estimator-group">
                 <div className="nb-estimator-row">
-                  <label className="nb-estimator-label">Project Complexity</label>
-                  <span className="nb-estimator-val" style={{color:'#7928ca'}}>{complexityOptions[complexity]}</span>
+                  <label className="nb-estimator-label">Complexity</label>
+                  <span className="nb-estimator-val" style={{color:'#7928ca'}}>{COMPLEXITY[complexity]}</span>
                 </div>
                 <input type="range" min={0} max={4} step={1} value={complexity}
                   onChange={e => setComplexity(+e.target.value)}
                   className="nb-estimator-slider"
-                  style={{background: trackBg(complexity, 0, 4, '#7928ca')}}
+                  style={{background: track(complexity, 0, 4, '#7928ca')}}
                 />
                 <div className="nb-estimator-ticks">
-                  {complexityOptions.map(o => <span key={o}>{o}</span>)}
+                  {COMPLEXITY.map(o => <span key={o}>{o}</span>)}
                 </div>
               </div>
+
+              {/* Timeline */}
+              <div className="nb-estimator-group">
+                <div className="nb-estimator-row">
+                  <label className="nb-estimator-label">Timeline</label>
+                  <span className="nb-estimator-val" style={{color:'#00f0ff'}}>
+                    {TIMELINE_LABELS[timeline]}
+                    {timeline === 0 && <span style={{fontSize:'10px',color:'#ff0080',marginLeft:6}}>Rush fee applies</span>}
+                  </span>
+                </div>
+                <input type="range" min={0} max={5} step={1} value={timeline}
+                  onChange={e => setTimeline(+e.target.value)}
+                  className="nb-estimator-slider"
+                  style={{background: track(timeline, 0, 5, '#00f0ff')}}
+                />
+                <div className="nb-estimator-ticks">
+                  {TIMELINE_LABELS.map(l => <span key={l}>{l}</span>)}
+                </div>
+              </div>
+
+              {/* Team Size */}
               <div className="nb-estimator-group">
                 <div className="nb-estimator-row">
                   <label className="nb-estimator-label">Team Size</label>
-                  <span className="nb-estimator-val" style={{color:'#ff0080'}}>{teamOptions[teamSize]}</span>
+                  <span className="nb-estimator-val" style={{color:'#ff0080'}}>{TEAM_OPTIONS[teamSize]}</span>
                 </div>
                 <input type="range" min={0} max={4} step={1} value={teamSize}
                   onChange={e => setTeamSize(+e.target.value)}
                   className="nb-estimator-slider"
-                  style={{background: trackBg(teamSize, 0, 4, '#ff0080')}}
+                  style={{background: track(teamSize, 0, 4, '#ff0080')}}
                 />
                 <div className="nb-estimator-ticks">
-                  {teamOptions.map(o => <span key={o}>{o}</span>)}
+                  {TEAM_OPTIONS.map(o => <span key={o}>{o}</span>)}
                 </div>
               </div>
             </div>
+
+            {/* ── Result ── */}
             <div className="nb-estimator-result">
+              <div className="nb-estimator-svc-badge" style={{background:`${svc.color}14`,border:`1px solid ${svc.color}40`,color:svc.color}}>
+                {svc.label}
+              </div>
               <p className="nb-estimator-result-label">Estimated Investment</p>
               <div className="nb-estimator-price">
-                <span className="nb-grad">{fmt(lo)}</span>
+                <span style={{color:svc.color}}>{fmt(lo)}</span>
                 <span className="nb-estimator-dash"> – </span>
-                <span className="nb-grad">{fmt(hi)}</span>
+                <span style={{color:svc.color}}>{fmt(hi)}</span>
+              </div>
+              <div className="nb-estimator-breakdown">
+                <div className="nb-estimator-breakdown-row">
+                  <span>Base price</span>
+                  <span style={{color:svc.color}}>{fmt(svc.base)}</span>
+                </div>
+                <div className="nb-estimator-breakdown-row">
+                  <span>Complexity</span>
+                  <span>{COMPLEXITY[complexity]} ×{COMPLEXITY_MULT[complexity]}</span>
+                </div>
+                <div className="nb-estimator-breakdown-row">
+                  <span>Timeline</span>
+                  <span>{TIMELINE_LABELS[timeline]} ×{TIMELINE_MULT[timeline]}</span>
+                </div>
+                <div className="nb-estimator-breakdown-row">
+                  <span>Team size</span>
+                  <span>{TEAM_OPTIONS[teamSize]} ×{TEAM_MULT[teamSize]}</span>
+                </div>
               </div>
               <p className="nb-estimator-result-note">
-                Ballpark based on typical project scope. Final quote confirmed after discovery call.
+                Ballpark only. Final quote confirmed after a free discovery call — no obligation.
               </p>
               <div className="nb-estimator-includes">
-                {['All revisions included', '30-day post-launch support', 'No hidden costs, ever'].map(item => (
+                {['All revisions included','30-day post-launch support','No hidden costs, ever'].map(item => (
                   <div key={item} className="nb-estimator-include-row">
-                    <CheckCircle size={13} style={{color:'#00f0ff', flexShrink:0}}/>
+                    <CheckCircle size={13} style={{color:svc.color,flexShrink:0}}/>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
-              <NavLink to="/contact" className="nb-btn nb-btn-grad" style={{width:'100%', justifyContent:'center', marginTop:'auto', paddingTop:24}}>
+              <a href="#contact-form" className="nb-btn nb-btn-grad" style={{width:'100%',justifyContent:'center',marginTop:16,padding:'10px 20px'}}>
                 Get an exact quote <ArrowUpRight size={15}/>
-              </NavLink>
+              </a>
             </div>
+
           </div>
         </Reveal>
       </div>

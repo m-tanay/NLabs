@@ -3,9 +3,10 @@ import {
   ArrowRight, ChevronRight, Zap, Rocket, Globe, PenTool, Layers,
   TrendingUp, MessageCircle, ShoppingBag, Target, Shield, Users,
   Search, Code2, Package, GitBranch, Activity, Clock, MessageSquare,
-  CheckCircle, Star, Quote,
+  CheckCircle, Star, Quote, Bot, Cpu, Workflow,
 } from 'lucide-react'
 import Badge from '../components/Badge'
+import Globe3D from '../components/Globe3D'
 import { Reveal, StaggerReveal } from '../hooks/useInView'
 
 /* ─── Hero ─────────────────────────────────────────────────────────────── */
@@ -17,6 +18,7 @@ function Hero() {
   ]
   return (
     <section className="nb-hero">
+      <Globe3D />
       <div className="nb-orb nb-orb-purple" style={{ width:600, height:600, top:-200, left:-200 }} />
       <div className="nb-orb nb-orb-blue"   style={{ width:500, height:500, top:100,  right:-100 }} />
       <div className="nb-hero-grid">
@@ -28,8 +30,7 @@ function Hero() {
             <span className="nb-grad">Actually Work</span>
           </h1>
           <p className="nb-hero-sub">
-            NexbeeLabs is a new kind of digital agency — lean, focused, and obsessed with craft.
-            We design and build websites, brands, and digital experiences that are fast, beautiful, and built to grow.
+            NexbeeLabs is a complete business solutions agency — from websites and brands to AI agents, automation, and intelligent chatbots. We build digital products and systems that actually work for your business.
           </p>
           <div className="nb-hero-cta">
             <a href="#contact" className="nb-btn nb-btn-light">Start a Project <ArrowRight size={16} /></a>
@@ -91,35 +92,49 @@ function Hero() {
 /* ─── Services ──────────────────────────────────────────────────────────── */
 function Services() {
   const services = [
-    { Icon: Globe,         title: 'Web Design & Development',  body: 'Conversion-focused websites built from scratch. No page builders, no shortcuts.',        tags: ['Next.js','TypeScript','Webflow'],       accent: '#00f0ff' },
-    { Icon: PenTool,       title: 'Brand Identity & Strategy', body: 'Logo, colors, typography, tone. A brand system that holds together everywhere.',           tags: ['Logo','Guidelines','Positioning'],      accent: '#7928ca' },
-    { Icon: Layers,        title: 'UI/UX Design',              body: 'Interfaces that make sense the first time. Research-informed, beautifully executed.',       tags: ['Figma','Prototyping','Research'],       accent: '#ff0080' },
-    { Icon: TrendingUp,    title: 'SEO & Digital Marketing',   body: 'Get found. Get clicked. Get customers. Strategies that compound over time.',                tags: ['Technical SEO','Google Ads','Content'], accent: '#00f0ff' },
-    { Icon: MessageCircle, title: 'Social Media Management',   body: 'Consistent, creative content that builds a real audience — not just follower counts.',      tags: ['Strategy','Reels','Reporting'],         accent: '#7928ca' },
-    { Icon: ShoppingBag,   title: 'E-Commerce Solutions',      body: 'Online stores designed to sell. Shopify or WooCommerce, optimized for conversion.',         tags: ['Shopify','WooCommerce','CRO'],          accent: '#ff0080' },
+    { Icon: Cpu,           title: 'AI Agents & Intelligent Automation',body: 'Custom AI agents that work for your business 24/7 — making decisions, handling tasks, scaling effortlessly.',  tags: ['OpenAI','Claude API','LangChain','n8n'], accent: '#00f0ff', image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80' },
+    { Icon: Workflow,      title: 'Business Process Automation',       body: 'Eliminate repetitive work with smart workflows. From email triage to cross-platform data sync.', tags: ['n8n','Make','Zapier','Webhooks'],        accent: '#7928ca', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80' },
+    { Icon: Bot,           title: 'AI Chatbots & Virtual Assistants',  body: 'Intelligent chatbots trained on your business — for support, leads, and bookings around the clock.', tags: ['OpenAI','Voiceflow','WhatsApp API','RAG'], accent: '#ff0080', image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80' },
+    { Icon: Globe,         title: 'Web Design & Development',          body: 'Conversion-focused websites built from scratch. No page builders, no shortcuts.',              tags: ['Next.js','TypeScript','Webflow'],       accent: '#0070f3', image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80' },
+    { Icon: PenTool,       title: 'Brand Identity & Strategy',         body: 'Logo, colors, typography, tone. A brand system that holds together everywhere.',               tags: ['Logo','Guidelines','Positioning'],      accent: '#ff6b35', image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80' },
+    { Icon: Layers,        title: 'UI/UX Design',                      body: 'Interfaces that make sense the first time. Research-informed, beautifully executed.',           tags: ['Figma','Prototyping','Research'],       accent: '#00d4a1', image: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?auto=format&fit=crop&w=800&q=80' },
+    { Icon: TrendingUp,    title: 'SEO & Digital Marketing',           body: 'Get found. Get clicked. Get customers. Strategies that compound over time.',                    tags: ['Technical SEO','Google Ads','Content'], accent: '#ffd60a', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80' },
+    { Icon: MessageCircle, title: 'Social Media Management',           body: 'Consistent, creative content that builds a real audience — not just follower counts.',          tags: ['Strategy','Reels','Reporting'],         accent: '#bf5af2', image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80' },
+    { Icon: ShoppingBag,   title: 'E-Commerce Solutions',              body: 'Online stores designed to sell. Shopify or WooCommerce, optimized for conversion.',             tags: ['Shopify','WooCommerce','CRO'],          accent: '#30d158', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80' },
   ]
   return (
     <section className="nb-section nb-section-dotgrid" id="services">
       <div className="nb-container">
         <div className="nb-section-head">
           <Badge>What We Do</Badge>
-          <h2 className="nb-h2">Everything your <span className="nb-grad">digital presence</span> needs</h2>
-          <p className="nb-section-sub">From the first sketch to the final launch — and everything after.</p>
+          <h2 className="nb-h2">Complete digital solutions — including <span className="nb-grad">AI & Automation</span></h2>
+          <p className="nb-section-sub">From web and brand to AI agents, chatbots, and business automation — everything your business needs to grow.</p>
         </div>
         <div className="nb-svc-grid">
           {services.map((s, i) => (
-            <div key={s.title} className="nb-svc-card">
-              <div className="nb-svc-card-head">
-                <div className="nb-svc-icon" style={{background:`${s.accent}18`,color:s.accent,border:`1px solid ${s.accent}30`}}>
-                  <s.Icon size={22} />
+            <div
+              key={s.title}
+              className="nb-svc-card"
+              style={{'--accent': s.accent}}
+              onMouseEnter={() => { document.documentElement.style.setProperty('--card-hover-accent', s.accent); document.documentElement.style.setProperty('--card-hover-border', s.accent) }}
+              onMouseLeave={() => { document.documentElement.style.setProperty('--card-hover-accent', 'rgba(0,0,0,0)'); document.documentElement.style.setProperty('--card-hover-border', 'rgba(255,255,255,.14)') }}
+            >
+              <img src={s.image} alt="" aria-hidden="true" className="nb-svc-card-bg" />
+              <div className="nb-svc-card-scrim" />
+              <div className="nb-svc-card-watermark">{String(i+1).padStart(2,'0')}</div>
+              <div className="nb-svc-card-content">
+                <div className="nb-svc-card-head">
+                  <div className="nb-svc-icon" style={{background:`${s.accent}22`,color:s.accent,border:`1px solid ${s.accent}`,boxShadow:`0 0 18px ${s.accent}55`,backdropFilter:'blur(6px)'}}>
+                    <s.Icon size={22} />
+                  </div>
+                  <div className="nb-svc-num">{String(i+1).padStart(2,'0')}</div>
                 </div>
-                <div className="nb-svc-num">{String(i+1).padStart(2,'0')}</div>
-              </div>
-              <h3 className="nb-svc-title">{s.title}</h3>
-              <p className="nb-svc-body">{s.body}</p>
-              <div className="nb-svc-tags">{s.tags.map(t => <span key={t} className="nb-svc-tag">{t}</span>)}</div>
-              <div className="nb-svc-foot">
-                <a href="#contact" className="nb-svc-link">Learn more <ChevronRight size={14} /></a>
+                <h3 className="nb-svc-title">{s.title}</h3>
+                <p className="nb-svc-body">{s.body}</p>
+                <div className="nb-svc-tags">{s.tags.map(t => <span key={t} className="nb-svc-tag">{t}</span>)}</div>
+                <div className="nb-svc-foot">
+                  <a href="#contact" className="nb-svc-link">Learn more <ChevronRight size={14} /></a>
+                </div>
               </div>
             </div>
           ))}
@@ -268,6 +283,12 @@ function WhyUs() {
         <div className="nb-bento">
           {/* Tall */}
           <div className="nb-bento-card nb-bento-tall">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+              alt=""
+              aria-hidden="true"
+              style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center',opacity:.32,zIndex:0,transition:'opacity .5s'}}
+            />
             <div className="nb-bento-content">
               <div className="nb-bento-icon" style={{background:'rgba(0,240,255,.08)',color:'#00f0ff',border:'1px solid rgba(0,240,255,.2)'}}><Zap size={22} /></div>
               <div className="nb-bento-eyebrow">Capacity</div>
