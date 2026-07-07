@@ -274,9 +274,9 @@ function WhyUs() {
     <section className="nb-section nb-section-radial" id="about">
       <div className="nb-container">
         <div className="nb-section-head">
-          <Badge>Why NexbeeLabs</Badge>
-          <h2 className="nb-h2">We're new. <span className="nb-grad">That's actually the point.</span></h2>
-          <p className="nb-section-sub">No legacy processes. No oversized teams. No clients waiting in a queue. Just focused, senior-level work — every time.</p>
+          <Badge>Why Nexbee</Badge>
+          <h2 className="nb-h2">Built for the way <span className="nb-grad">modern business works.</span></h2>
+          <p className="nb-section-sub">Senior-level expertise, enterprise-grade delivery, and a team that treats your goals as their own — without the overhead of a large agency.</p>
         </div>
         <div className="nb-bento">
           {/* Tall */}
@@ -289,13 +289,13 @@ function WhyUs() {
             />
             <div className="nb-bento-content">
               <div className="nb-bento-icon" style={{background:'rgba(0,240,255,.08)',color:'#00f0ff',border:'1px solid rgba(0,240,255,.2)'}}><Zap size={22} /></div>
-              <div className="nb-bento-eyebrow">Capacity</div>
-              <h3>Best work,<br />not available work</h3>
-              <p>We're selective about projects so we can do each one properly. When we're on yours, it has our full attention.</p>
+              <div className="nb-bento-eyebrow">Delivery</div>
+              <h3>Focused teams,<br />enterprise results</h3>
+              <p>Lean, accountable delivery teams that move fast without cutting corners — every project gets full senior attention from kickoff to launch.</p>
               <div className="nb-bento-stat-row">
-                <div className="nb-bento-stat"><div className="nb-bento-stat-v">5</div><div className="nb-bento-stat-l">Projects/quarter</div></div>
+                <div className="nb-bento-stat"><div className="nb-bento-stat-v">50+</div><div className="nb-bento-stat-l">Projects delivered</div></div>
                 <div className="nb-bento-divider" />
-                <div className="nb-bento-stat"><div className="nb-bento-stat-v">100%</div><div className="nb-bento-stat-l">Focus</div></div>
+                <div className="nb-bento-stat"><div className="nb-bento-stat-v">98%</div><div className="nb-bento-stat-l">On-time rate</div></div>
               </div>
             </div>
             <div className="nb-pulse-wrap">
@@ -310,8 +310,8 @@ function WhyUs() {
               <div className="nb-bento-content">
                 <div className="nb-bento-icon" style={{background:'rgba(121,40,202,.08)',color:'#7928ca',border:'1px solid rgba(121,40,202,.2)'}}><Target size={22} /></div>
                 <div className="nb-bento-eyebrow">Method</div>
-                <h3>Strategy drives<br />everything we do</h3>
-                <p>We don't start with aesthetics. We start with your business, your customers, and what success looks like.</p>
+                <h3>Outcomes first,<br />technology second</h3>
+                <p>We start with your business goals, then engineer the right solution — not the trendiest one. Every decision maps back to measurable impact.</p>
               </div>
               <div className="nb-bento-codewell">
                 <div className="nb-code-head">
@@ -335,9 +335,9 @@ function WhyUs() {
           <div className="nb-bento-card nb-bento-square">
             <div className="nb-bento-content">
               <div className="nb-bento-icon" style={{background:'rgba(0,240,255,.08)',color:'#00f0ff',border:'1px solid rgba(0,240,255,.2)'}}><Shield size={22} /></div>
-              <div className="nb-bento-eyebrow">Craft</div>
-              <h3>We build things that last</h3>
-              <p>Clean code. Documented systems. Handoffs that make sense.</p>
+              <div className="nb-bento-eyebrow">Quality</div>
+              <h3>Built to last,<br />built to scale</h3>
+              <p>Production-ready code, documented systems, and infrastructure designed to grow with your business — not just ship and disappear.</p>
               <div className="nb-bento-meter">
                 <div className="nb-bento-meter-row"><span>Lighthouse</span><span className="nb-bento-meter-v">98</span></div>
                 <div className="nb-bento-meter-track"><div className="nb-bento-meter-fill" style={{width:'98%',background:'#00f0ff'}} /></div>
@@ -356,16 +356,16 @@ function WhyUs() {
           <div className="nb-bento-card nb-bento-square">
             <div className="nb-bento-content">
               <div className="nb-bento-icon" style={{background:'rgba(121,40,202,.08)',color:'#7928ca',border:'1px solid rgba(121,40,202,.2)'}}><Users size={22} /></div>
-              <div className="nb-bento-eyebrow">Access</div>
-              <h3>Direct access to the people doing the work</h3>
-              <p>No account managers. No middlemen.</p>
+              <div className="nb-bento-eyebrow">Partnership</div>
+              <h3>You work with experts,<br />not account managers</h3>
+              <p>Direct access to the engineers and strategists doing the work. No handoffs. No communication layers.</p>
               <div className="nb-stack-row">
                 <div className="nb-avstack">
                   {[['MH','linear-gradient(135deg,#0070f3,#00f0ff)'],['FK','linear-gradient(135deg,#7928ca,#ff0080)'],['SI','linear-gradient(135deg,#ff0080,#ffb86c)'],['NR','linear-gradient(135deg,#00f0ff,#7928ca)']].map(([initials,grad])=>(
                     <div key={initials} className="nb-av" style={{background:grad}}>{initials}</div>
                   ))}
                 </div>
-                <span className="nb-stack-label">4 people. Always.</span>
+                <span className="nb-stack-label">Senior team. Every project.</span>
               </div>
             </div>
           </div>
