@@ -30,7 +30,7 @@ const sections = [
     body: [
       'For project-based engagements, payment is structured as follows: 50% of the agreed project fee is due upon signing the project agreement; the remaining 50% is due upon final delivery or go-live, whichever comes first.',
       'Monthly retainer services are billed at the start of each billing cycle. Invoices are due within 14 days of issue. Late payments may result in a suspension of services until the outstanding balance is settled.',
-      'All prices are quoted in USD unless otherwise stated. We accept bank transfer and major credit/debit cards. Fees are non-refundable once work has commenced on that phase of the project, except in cases of material breach by NexbeeLabs.',
+      'All prices are quoted in Australian Dollars (AUD) and are exclusive of GST unless otherwise stated. Where GST applies, it will be added to invoices in accordance with the A New Tax System (Goods and Services Tax) Act 1999 (Cth). We accept bank transfer and major credit/debit cards. Fees are non-refundable once work has commenced on that phase of the project, except in cases of material breach by NexbeeLabs.',
     ],
   },
   {
@@ -61,12 +61,13 @@ const sections = [
       'NexbeeLabs warrants that all work is produced with reasonable skill and care, and that we hold the necessary rights to deliver the agreed services.',
       'Our services are provided "as delivered." We do not warrant that websites or digital products we build will be free from bugs forever, or that they will meet every business objective. We provide a 30-day post-launch support window to address issues arising from our work.',
       'We make no guarantees regarding specific SEO rankings, conversion rates, or marketing results, as these depend on many factors outside our control.',
+      'Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy conferred on you by the Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010 (Cth)) or any other applicable law that cannot lawfully be excluded, restricted, or modified by agreement. Where our services are not of a kind ordinarily acquired for personal, domestic, or household use, our liability for breach of a non-excludable guarantee is limited, at our option, to resupplying the services or paying the cost of having the services resupplied.',
     ],
   },
   {
     title: '9. Limitation of Liability',
     body: [
-      'To the maximum extent permitted by law, NexbeeLabs shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising from or relating to these Terms or our services.',
+      'Subject to clause 8 above, and to the maximum extent permitted by law, NexbeeLabs shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising from or relating to these Terms or our services.',
       'Our total liability for any claim related to a specific project shall not exceed the total fees paid by the client for that project in the 12 months preceding the claim.',
     ],
   },
@@ -80,8 +81,8 @@ const sections = [
   {
     title: '11. Governing Law',
     body: [
-      'These Terms are governed by and construed in accordance with the laws of Bangladesh. Any disputes arising from these Terms or our services shall first be attempted to be resolved through good-faith negotiation.',
-      'If a dispute cannot be resolved through negotiation within 30 days, the parties agree to submit to the jurisdiction of the courts of Dhaka, Bangladesh.',
+      'These Terms are governed by and construed in accordance with the laws of New South Wales, Australia, and the applicable laws of the Commonwealth of Australia. Any disputes arising from these Terms or our services shall first be attempted to be resolved through good-faith negotiation.',
+      'If a dispute cannot be resolved through negotiation within 30 days, the parties submit to the non-exclusive jurisdiction of the courts of New South Wales, Australia.',
     ],
   },
   {
@@ -97,23 +98,23 @@ export default function Terms() {
     <>
       {/* Hero */}
       <section className="nb-legal-hero">
-        <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:-200,left:-100,opacity:.06,pointerEvents:'none'}}/>
-        <div className="nb-orb nb-orb-blue"   style={{width:400,height:400,bottom:-100,right:-100,opacity:.05,pointerEvents:'none'}}/>
+        <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:-200,left:-100,opacity:.28,pointerEvents:'none'}}/>
+        <div className="nb-orb nb-orb-blue"   style={{width:400,height:400,bottom:-100,right:-100,opacity:.22,pointerEvents:'none'}}/>
         <div className="nb-container" style={{position:'relative',zIndex:2}}>
           <Reveal>
             <NavLink to="/" className="nb-legal-back"><ArrowLeft size={14}/> Back to site</NavLink>
             <div className="nb-legal-hero-icon"><FileText size={28}/></div>
             <h1 className="nb-page-h1" style={{marginBottom:12}}>Terms of <span className="nb-grad">Service</span></h1>
-            <p className="nb-legal-meta">Effective date: 1 January 2025 · Last updated: 1 May 2025</p>
+            <p className="nb-legal-meta">Effective date: 1 January 2025 · Last updated: 17 July 2026</p>
             <p className="nb-legal-intro">
-              These Terms govern your use of NexbeeLabs' website and services. We've written them to be clear and fair. If something isn't clear, reach out — we'd rather explain than hide behind legalese.
+              These Terms govern your use of NexbeeLabs' website and services, and are drafted to comply with Australian law, including the Australian Consumer Law. We've written them to be clear and fair. If something isn't clear, reach out — we'd rather explain than hide behind legalese.
             </p>
           </Reveal>
         </div>
       </section>
 
       {/* Content */}
-      <section style={{padding:'0 0 100px'}}>
+      <section style={{padding:'0 0 100px',background:'#05050f'}}>
         <div className="nb-container nb-legal-layout">
           <Reveal>
             <div className="nb-legal-body">

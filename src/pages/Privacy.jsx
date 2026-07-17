@@ -22,6 +22,7 @@ const sections = [
     body: [
       'We do not sell, trade, or rent your personal information to third parties. We may share your data with trusted service providers who assist us in operating our business — such as email platforms, project management tools, and payment processors — under strict confidentiality agreements.',
       'We may disclose your information if required by law, court order, or government authority, or if we believe disclosure is necessary to protect our rights or the safety of others.',
+      'Some of the third-party service providers we use (see "Third-Party Services" below) store or process data on servers located outside Australia, including in the United States. Where we disclose personal information to overseas recipients, we take reasonable steps, as required by Australian Privacy Principle 8, to ensure those recipients handle your information in a manner consistent with the APPs, unless an exception under the Privacy Act 1988 (Cth) applies.',
     ],
   },
   {
@@ -48,8 +49,9 @@ const sections = [
   {
     title: '7. Your Rights',
     body: [
-      'Depending on your location, you may have the following rights regarding your personal data: the right to access the personal information we hold about you; the right to correct inaccurate or incomplete data; the right to request deletion of your data; and the right to object to or restrict certain processing.',
+      'Under the Australian Privacy Principles (APPs) in the Privacy Act 1988 (Cth), you have the right to: access the personal information we hold about you (APP 12); request correction of inaccurate, out-of-date, or incomplete information (APP 13); request deletion of your data where we are not required to retain it for legal or business purposes; and object to or ask us to restrict certain processing.',
       'To exercise any of these rights, please contact us at hello@nexbeelabs.com. We will respond to your request within 30 days.',
+      'If you are not satisfied with how we have handled your personal information or responded to your request, you have the right to lodge a complaint with the Office of the Australian Information Commissioner (OAIC) at oaic.gov.au or by calling 1300 363 992. We would appreciate the opportunity to resolve any concerns directly before you take this step.',
     ],
   },
   {
@@ -78,23 +80,23 @@ export default function Privacy() {
     <>
       {/* Hero */}
       <section className="nb-legal-hero">
-        <div className="nb-orb nb-orb-blue"   style={{width:500,height:500,top:-200,right:-100,opacity:.06,pointerEvents:'none'}}/>
-        <div className="nb-orb nb-orb-purple" style={{width:400,height:400,bottom:-100,left:-100,opacity:.05,pointerEvents:'none'}}/>
+        <div className="nb-orb nb-orb-blue"   style={{width:500,height:500,top:-200,right:-100,opacity:.28,pointerEvents:'none'}}/>
+        <div className="nb-orb nb-orb-purple" style={{width:400,height:400,bottom:-100,left:-100,opacity:.22,pointerEvents:'none'}}/>
         <div className="nb-container" style={{position:'relative',zIndex:2}}>
           <Reveal>
             <NavLink to="/" className="nb-legal-back"><ArrowLeft size={14}/> Back to site</NavLink>
             <div className="nb-legal-hero-icon"><Shield size={28}/></div>
             <h1 className="nb-page-h1" style={{marginBottom:12}}>Privacy <span className="nb-grad">Policy</span></h1>
-            <p className="nb-legal-meta">Effective date: 1 January 2025 · Last updated: 1 May 2025</p>
+            <p className="nb-legal-meta">Effective date: 1 January 2025 · Last updated: 17 July 2026</p>
             <p className="nb-legal-intro">
-              At NexbeeLabs, your privacy matters to us. This policy explains what personal information we collect, how we use it, and your rights regarding that information. We keep it plain — no legal maze.
+              At NexbeeLabs, your privacy matters to us. This policy explains what personal information we collect, how we use it, and your rights regarding that information under the Privacy Act 1988 (Cth) and the Australian Privacy Principles. We keep it plain — no legal maze.
             </p>
           </Reveal>
         </div>
       </section>
 
       {/* Content */}
-      <section style={{padding:'0 0 100px'}}>
+      <section style={{padding:'0 0 100px',background:'#05050f'}}>
         <div className="nb-container nb-legal-layout">
           <Reveal>
             <div className="nb-legal-body">

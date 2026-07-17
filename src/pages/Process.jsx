@@ -72,8 +72,11 @@ function PageHero() {
 
 function ProcessDetail() {
   return (
-    <section style={{padding:'60px 0 80px'}}>
-      <div className="nb-container">
+    <section style={{padding:'60px 0 80px',position:'relative',overflow:'hidden',background:'#05050f'}}>
+      <div className="nb-orb nb-orb-blue"   style={{width:500,height:500,top:-180,right:-160,opacity:.3}}/>
+      <div className="nb-orb nb-orb-purple" style={{width:460,height:460,bottom:-180,left:-160,opacity:.3}}/>
+      <div className="nb-section-dotgrid" style={{position:'absolute',inset:0,pointerEvents:'none'}}/>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <div className="nb-proc-detail-list">
           {phases.map((p, i) => (
             <Reveal key={p.n} delay={`${i * 0.08}s`}>
@@ -122,8 +125,10 @@ function ProcessDetail() {
 function FAQ() {
   const [open, setOpen] = useState(0)
   return (
-    <section className="nb-pfaq-section">
-      <div className="nb-container">
+    <section className="nb-pfaq-section" style={{position:'relative',overflow:'hidden',background:'#05050f'}}>
+      <div className="nb-orb nb-orb-purple" style={{width:420,height:420,top:-160,right:-140,opacity:.25}}/>
+      <div className="nb-section-dotgrid" style={{position:'absolute',inset:0,pointerEvents:'none'}}/>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <div className="nb-pfaq-layout">
 
           {/* Left — sticky panel */}
@@ -170,14 +175,21 @@ function FAQ() {
 
 function CTA() {
   return (
-    <section style={{padding:'0 0 100px'}}>
-      <div className="nb-container nb-container-narrow" style={{textAlign:'center'}}>
-        <Reveal>
-          <Badge>Ready to start?</Badge>
-          <h2 className="nb-h2" style={{marginTop:16}}>Let's kick off your <span className="nb-grad">discovery call</span></h2>
-          <p className="nb-section-sub" style={{margin:'16px auto 36px',maxWidth:480}}>A 30-minute call to understand your project. Free, no commitment.</p>
-          <NavLink to="/contact" className="nb-btn nb-btn-grad">Book the call <ArrowRight size={16}/></NavLink>
-        </Reveal>
+    <section style={{padding:'60px 0 100px',background:'#05050f'}}>
+      <div className="nb-container nb-container-narrow">
+        <div className="nb-cta-card">
+          <div className="nb-cta-grid-bg" />
+          <div className="nb-cta-glow nb-cta-glow-1" />
+          <div className="nb-cta-glow nb-cta-glow-2" />
+          <div className="nb-cta-content">
+            <Reveal>
+              <Badge>Ready to start?</Badge>
+              <h2 className="nb-h2" style={{marginTop:16}}>Let's kick off your <span className="nb-grad">discovery call</span></h2>
+              <p className="nb-section-sub" style={{margin:'16px auto 36px',maxWidth:480}}>A 30-minute call to understand your project. Free, no commitment.</p>
+              <NavLink to="/contact" className="nb-btn nb-btn-grad">Book the call <ArrowRight size={16}/></NavLink>
+            </Reveal>
+          </div>
+        </div>
       </div>
     </section>
   )

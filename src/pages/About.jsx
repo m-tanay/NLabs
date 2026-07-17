@@ -32,8 +32,12 @@ function PageHero() {
 
 function Mission() {
   return (
-    <section style={{padding:'60px 0 80px'}}>
-      <div className="nb-container">
+    <section style={{padding:'80px 0 90px',position:'relative',overflow:'hidden',background:'#05050f'}}>
+      <div className="nb-orb nb-orb-purple" style={{width:560,height:560,top:-220,left:-180,opacity:.5}}/>
+      <div className="nb-orb nb-orb-blue"   style={{width:460,height:460,bottom:-200,right:-160,opacity:.4}}/>
+      <div style={{position:'absolute',inset:0,pointerEvents:'none',background:'radial-gradient(ellipse 60% 50% at 15% 20%,rgba(121,40,202,.22),transparent 60%),radial-gradient(ellipse 50% 45% at 90% 85%,rgba(0,112,243,.18),transparent 60%)'}}/>
+      <div className="nb-section-dotgrid" style={{position:'absolute',inset:0,pointerEvents:'none'}}/>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <div className="nb-about-split">
           <Reveal>
             <div className="nb-about-text">
@@ -77,12 +81,13 @@ function Stats() {
     { v:'∞',     l:'Post-launch support',sub:'We don\'t disappear',              color:'#ffb86c' },
   ]
   return (
-    <section style={{padding:'0 0 80px',background:'radial-gradient(ellipse at center,rgba(0,112,243,.06),transparent 70%)'}}>
-      <div className="nb-container">
+    <section style={{padding:'90px 0 90px',position:'relative',overflow:'hidden',background:'radial-gradient(ellipse at center,rgba(0,112,243,.16),transparent 85%),#05050f'}}>
+      <div className="nb-orb nb-orb-purple" style={{width:400,height:400,top:'50%',left:'50%',transform:'translate(-50%,-50%)',opacity:.22}}/>
+      <div className="nb-section-dotgrid" style={{position:'absolute',inset:0,pointerEvents:'none'}}/>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <StaggerReveal className="nb-stats-grid" step={0.08}>
           {stats.map(s => (
             <div key={s.v} className="nb-stat-card" style={{'--sc': s.color}}>
-              <div className="nb-stat-accent" style={{background: s.color}} />
               <div className="nb-stat-val" style={{color: s.color}}>{s.v}</div>
               <div className="nb-stat-label">{s.l}</div>
               <div className="nb-stat-sub">{s.sub}</div>
@@ -104,9 +109,12 @@ function Values() {
     { Icon:Heart,       color:'#ff0080', title:'Long-term thinking',   body:'We build things that last, not things that need rebuilding in 18 months.' },
   ]
   return (
-    <section style={{padding:'0 0 80px',position:'relative'}}>
+    <section style={{padding:'90px 0 90px',position:'relative',overflow:'hidden',background:'#05050f'}}>
+      <div className="nb-orb" style={{width:480,height:480,top:-160,right:-160,opacity:.4,background:'rgba(255,0,128,.35)'}}/>
+      <div className="nb-orb nb-orb-purple" style={{width:460,height:460,bottom:-180,left:-160,opacity:.4}}/>
+      <div style={{position:'absolute',inset:0,pointerEvents:'none',background:'radial-gradient(ellipse 60% 50% at 85% 0%,rgba(255,0,128,.16),transparent 60%),radial-gradient(ellipse 55% 50% at 5% 100%,rgba(121,40,202,.2),transparent 60%)'}}/>
       <div className="nb-section-dotgrid" style={{position:'absolute',inset:0,pointerEvents:'none'}}/>
-      <div className="nb-container">
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <Reveal>
           <div className="nb-section-head" style={{marginBottom:40}}>
             <Badge>What we believe</Badge>
@@ -130,17 +138,24 @@ function Values() {
 
 function CTA() {
   return (
-    <section style={{padding:'0 0 100px'}}>
-      <div className="nb-container nb-container-narrow" style={{textAlign:'center'}}>
-        <Reveal>
-          <Badge>Let's talk</Badge>
-          <h2 className="nb-h2" style={{marginTop:16}}>Ready to work with a team <span className="nb-grad">that actually cares?</span></h2>
-          <p className="nb-section-sub" style={{margin:'16px auto 36px',maxWidth:500}}>We take on a limited number of projects each quarter. Let's see if we're a good fit.</p>
-          <div style={{display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap'}}>
-            <NavLink to="/contact"   className="nb-btn nb-btn-grad">Start the conversation <ArrowRight size={16}/></NavLink>
-            <NavLink to="/portfolio" className="nb-btn nb-btn-ghost">See our work</NavLink>
+    <section style={{padding:'60px 0 100px',background:'#05050f'}}>
+      <div className="nb-container nb-container-narrow">
+        <div className="nb-cta-card">
+          <div className="nb-cta-grid-bg" />
+          <div className="nb-cta-glow nb-cta-glow-1" style={{opacity:.9}} />
+          <div className="nb-cta-glow nb-cta-glow-2" style={{opacity:.9}} />
+          <div className="nb-cta-content">
+            <Reveal>
+              <Badge>Let's talk</Badge>
+              <h2 className="nb-h2" style={{marginTop:16}}>Ready to work with a team <span className="nb-grad">that actually cares?</span></h2>
+              <p className="nb-section-sub" style={{margin:'16px auto 36px',maxWidth:500}}>We take on a limited number of projects each quarter. Let's see if we're a good fit.</p>
+              <div style={{display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap'}}>
+                <NavLink to="/contact"   className="nb-btn nb-btn-grad">Start the conversation <ArrowRight size={16}/></NavLink>
+                <NavLink to="/portfolio" className="nb-btn nb-btn-ghost">See our work</NavLink>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   )

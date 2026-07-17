@@ -113,8 +113,13 @@ function BudgetEstimator() {
   }
 
   return (
-    <section style={{padding:'0 0 80px'}}>
-      <div className="nb-container">
+    <section style={{padding:'80px 0 80px',position:'relative',background:'#05050f'}}>
+      <div style={{position:'absolute',inset:0,overflow:'hidden',pointerEvents:'none'}}>
+        <div className="nb-orb nb-orb-blue"   style={{width:460,height:460,top:-160,left:-140,opacity:.25}}/>
+        <div className="nb-orb nb-orb-purple" style={{width:420,height:420,bottom:-160,right:-140,opacity:.25}}/>
+        <div className="nb-section-dotgrid" style={{position:'absolute',inset:0}}/>
+      </div>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <Reveal>
           <div style={{textAlign:'center',marginBottom:48}}>
             <Badge>Budget Estimator</Badge>
@@ -313,8 +318,9 @@ export default function Contact() {
 
       {/* ── Main grid ── */}
       <section className="nb-contact-section">
-        <div className="nb-orb nb-orb-blue"   style={{width:500,height:500,top:-100,right:-150,opacity:.06,pointerEvents:'none'}}/>
-        <div className="nb-orb nb-orb-purple" style={{width:400,height:400,bottom:-100,left:-100,opacity:.05,pointerEvents:'none'}}/>
+        <div className="nb-orb nb-orb-blue"   style={{width:500,height:500,top:-100,right:-150,opacity:.28,pointerEvents:'none'}}/>
+        <div className="nb-orb nb-orb-purple" style={{width:400,height:400,bottom:-100,left:-100,opacity:.25,pointerEvents:'none'}}/>
+        <div className="nb-section-dotgrid" style={{position:'absolute',inset:0,pointerEvents:'none'}}/>
         <div className="nb-container" style={{position:'relative',zIndex:2}}>
           <div className="nb-contact-layout">
 
@@ -470,7 +476,7 @@ export default function Contact() {
 
       {/* ── Schedule a Meeting ── */}
       <section className="nb-booking-section">
-        <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:'50%',left:-200,transform:'translateY(-50%)',opacity:.06,pointerEvents:'none'}}/>
+        <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:'50%',left:-200,transform:'translateY(-50%)',opacity:.2,pointerEvents:'none'}}/>
         <div className="nb-container" style={{position:'relative',zIndex:2}}>
           <div className="nb-booking-grid">
             <Reveal>
@@ -542,8 +548,8 @@ export default function Contact() {
       <BudgetEstimator/>
 
       {/* ── CTA ── */}
-      <section style={{padding:'0 0 100px',position:'relative'}}>
-        <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:'50%',left:'50%',transform:'translate(-50%,-50%)',opacity:.06,pointerEvents:'none'}}/>
+      <section style={{padding:'60px 0 100px',position:'relative',background:'#05050f'}}>
+        <div className="nb-orb nb-orb-purple" style={{width:500,height:500,top:'50%',left:'50%',transform:'translate(-50%,-50%)',opacity:.2,pointerEvents:'none'}}/>
         <div className="nb-container nb-container-narrow" style={{position:'relative',zIndex:2}}>
           <Reveal>
             <div className="nb-contact-cta-card">

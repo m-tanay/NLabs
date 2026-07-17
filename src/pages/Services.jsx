@@ -124,8 +124,11 @@ function PageHero() {
 
 function ServiceList() {
   return (
-    <section className="nb-section" style={{background:'#07070d'}}>
-      <div className="nb-container">
+    <section className="nb-section" style={{position:'relative',overflow:'hidden',background:'#05050f'}}>
+      <div className="nb-orb nb-orb-blue"   style={{width:520,height:520,top:-200,left:-160,opacity:.35}}/>
+      <div className="nb-orb nb-orb-purple" style={{width:460,height:460,bottom:-180,right:-160,opacity:.3}}/>
+      <div className="nb-section-dotgrid" style={{position:'absolute',inset:0,pointerEvents:'none'}}/>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <div className="nb-svc-full-list">
           {services.map((s, i) => (
             <div key={s.num} className="nb-svc-full-card" style={{'--accent': s.accent}}>
@@ -197,7 +200,7 @@ function WhyItWorks() {
     },
   ]
   return (
-    <section style={{padding:'100px 0', position:'relative', overflow:'hidden', background:'#07070d'}}>
+    <section style={{padding:'100px 0', position:'relative', overflow:'hidden', background:'#05050f'}}>
       {/* Top accent line */}
       <div style={{
         position:'absolute', top:0, left:'6%', right:'6%', height:'1px', zIndex:2, pointerEvents:'none',
@@ -250,7 +253,7 @@ function HowItWorks() {
     { Icon: LifeBuoy,    color: '#ffb86c', n: '04', title: 'Launch & support',    body: 'We handle launch and stay on for 30 days post-delivery to fix anything that needs fixing.' },
   ]
   return (
-    <section style={{padding:'80px 0',background:'radial-gradient(ellipse at center,rgba(0,112,243,.05),transparent 70%) #07070d',position:'relative'}}>
+    <section style={{padding:'80px 0',background:'radial-gradient(ellipse at center,rgba(0,112,243,.08),transparent 85%),#05050f',position:'relative'}}>
       <div className="nb-container">
         <Reveal>
           <div className="nb-section-head" style={{marginBottom:48}}>
@@ -297,8 +300,10 @@ const faqs = [
 function FAQ() {
   const [open, setOpen] = useState(0)
   return (
-    <section className="nb-pfaq-section">
-      <div className="nb-container">
+    <section className="nb-pfaq-section" style={{position:'relative',overflow:'hidden',background:'#05050f'}}>
+      <div className="nb-orb nb-orb-purple" style={{width:420,height:420,top:-160,right:-140,opacity:.25}}/>
+      <div className="nb-section-dotgrid" style={{position:'absolute',inset:0,pointerEvents:'none'}}/>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <div className="nb-pfaq-layout">
 
           {/* Left — sticky panel */}
@@ -343,12 +348,19 @@ function FAQ() {
 
 function CTA() {
   return (
-    <section className="nb-section" style={{background:'#07070d'}}>
-      <div className="nb-container nb-container-narrow" style={{textAlign:'center'}}>
-        <Badge>Not sure where to start?</Badge>
-        <h2 className="nb-h2" style={{marginTop:16}}>Let's figure it out <span className="nb-grad">together</span></h2>
-        <p className="nb-section-sub" style={{margin:'20px auto 40px',maxWidth:520}}>Tell us about your project and we'll recommend the right services — no pressure, no sales pitch.</p>
-        <NavLink to="/contact" className="nb-btn nb-btn-grad">Book a free call <ArrowRight size={16}/></NavLink>
+    <section className="nb-section" style={{background:'#05050f'}}>
+      <div className="nb-container nb-container-narrow">
+        <div className="nb-cta-card">
+          <div className="nb-cta-grid-bg" />
+          <div className="nb-cta-glow nb-cta-glow-1" />
+          <div className="nb-cta-glow nb-cta-glow-2" />
+          <div className="nb-cta-content">
+            <Badge>Not sure where to start?</Badge>
+            <h2 className="nb-h2" style={{marginTop:16}}>Let's figure it out <span className="nb-grad">together</span></h2>
+            <p className="nb-section-sub" style={{margin:'20px auto 40px',maxWidth:520}}>Tell us about your project and we'll recommend the right services — no pressure, no sales pitch.</p>
+            <NavLink to="/contact" className="nb-btn nb-btn-grad">Book a free call <ArrowRight size={16}/></NavLink>
+          </div>
+        </div>
       </div>
     </section>
   )

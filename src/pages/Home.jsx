@@ -101,8 +101,12 @@ function Services() {
     { Icon: ShoppingBag,   title: 'E-Commerce Solutions',              body: 'Online stores designed to sell. Shopify or WooCommerce, optimized for conversion.',             tags: ['Shopify','WooCommerce','CRO'],          accent: '#30d158', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80' },
   ]
   return (
-    <section className="nb-section nb-section-dotgrid" id="services">
-      <div className="nb-container">
+    <section className="nb-section nb-section-dotgrid" id="services" style={{background:'#05050f'}}>
+      <div style={{position:'absolute',inset:0,overflow:'hidden',pointerEvents:'none'}}>
+        <div className="nb-orb nb-orb-blue"   style={{width:520,height:520,top:-200,left:-160,opacity:.22}}/>
+        <div className="nb-orb nb-orb-purple" style={{width:460,height:460,bottom:-200,right:-160,opacity:.2}}/>
+      </div>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <div className="nb-section-head">
           <Badge>What We Do</Badge>
           <h2 className="nb-h2">Complete digital solutions — including <span className="nb-grad">AI & Automation</span></h2>
@@ -211,7 +215,7 @@ function SitePreview({ url, title }) {
 
 function FeaturedProjects() {
   return (
-    <section className="nb-section" id="portfolio">
+    <section className="nb-section" id="portfolio" style={{background:'#05050f'}}>
       <div className="nb-container">
         <Reveal>
           <div className="nb-section-head">
@@ -537,8 +541,8 @@ function Testimonials() {
     { q:"The brand identity they built for us gave our restaurant a voice we didn't know we were missing. Every guest comments on it now.",                                                     n:'Nusrat Jahan',   r:'Co-founder, Flare Kitchen', i:'NJ', metric:'Identity + web',   grad:'linear-gradient(135deg,#00f0ff,#7928ca)' },
   ]
   return (
-    <section className="nb-section">
-      <div className="nb-container nb-container-narrow">
+    <section className="nb-section" style={{background:'#05050f'}}>
+      <div className="nb-container">
         <div className="nb-section-head">
           <Badge>Testimonials</Badge>
           <h2 className="nb-h2">Trusted by the people <span className="nb-grad">we've worked with</span></h2>
@@ -576,7 +580,7 @@ function ContactCTA() {
     { Icon:Globe,         label:'Global', sub:'remote-first' },
   ]
   return (
-    <section className="nb-section" id="contact">
+    <section className="nb-section" id="contact" style={{background:'#05050f'}}>
       <div className="nb-container nb-container-narrow">
         <div className="nb-cta-card">
           <div className="nb-cta-grid-bg" />
@@ -588,7 +592,7 @@ function ContactCTA() {
             <p className="nb-section-sub" style={{maxWidth:560,margin:'20px auto 36px'}}>
               Tell us what you're working on. We'll get back to you within 24 hours — usually faster.
             </p>
-            <div style={{display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap',marginBottom:48}}>
+            <div style={{display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap',marginBottom:28}}>
               <a href="mailto:hello@nexbeelabs.com" className="nb-btn nb-btn-grad">Start a conversation <ArrowRight size={16} /></a>
               <a href="#services" className="nb-btn nb-btn-ghost">See our services</a>
             </div>

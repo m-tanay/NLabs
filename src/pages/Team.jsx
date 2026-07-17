@@ -8,7 +8,7 @@ const team = [
     initials: 'NT', name: 'MD Niamul Islam Tanay', role: 'Founder & Chief Executive Officer',
     color: '#00f0ff', grad: 'linear-gradient(135deg,#0070f3,#00f0ff)',
     photo: '/assets/NexBEE.JPG',
-    bio: 'Leads the overall direction and operations of NexbeeLabs, defining strategic priorities, guiding business growth, and ensuring the delivery of reliable and high-quality IT and digital solutions. Maintains strong relationships with clients and partners, working closely with leadership and technical teams to uphold professional standards and long-term value.',
+    bio: 'Leads NexbeeLabs\' strategic direction and growth, ensuring every project meets a high bar for quality. Builds lasting relationships with clients and partners.',
     skills: ['Strategic Leadership','Business Development','Client Relations','Operations'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -16,7 +16,7 @@ const team = [
     initials: 'MS', name: 'Md. Mehadi Hasan Shawon', role: 'Head of Technology & Innovation',
     color: '#7928ca', grad: 'linear-gradient(135deg,#7928ca,#ff0080)',
     photo: '/assets/Shawon.jpg',
-    bio: 'Drives the technical vision and innovation strategy of NexbeeLabs. Oversees architecture decisions, engineering standards, and the adoption of emerging technologies to build scalable, secure, and future-ready solutions. Bridges the gap between business goals and technical execution, ensuring every product delivered meets the highest standards of quality and reliability.',
+    bio: 'Drives NexbeeLabs\' technical vision — architecture, engineering standards, and emerging tech. Bridges business goals and execution to ship scalable, secure products.',
     skills: ['Technical Strategy','Full Stack Development','Cloud Infrastructure','Security & Scalability'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -24,7 +24,7 @@ const team = [
     initials: 'TI', name: 'Md. Tarikul Islam', role: 'Team Lead',
     color: '#0070f3', grad: 'linear-gradient(135deg,#0070f3,#00f0ff)',
     photo: '',
-    bio: 'Provides overall technical leadership and project oversight. Responsible for planning and coordinating development activities, ensuring best practices, resolving technical challenges, and delivering projects on time with a strong focus on quality and reliability.',
+    bio: 'Leads project planning and technical oversight across the team. Coordinates development, resolves blockers, and keeps projects on time without cutting corners.',
     skills: ['Technical Leadership','Project Management','Best Practices','Quality Assurance'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -32,7 +32,7 @@ const team = [
     initials: 'RA', name: 'Rashedul Alom', role: 'Senior Software Engineer',
     color: '#ff0080', grad: 'linear-gradient(135deg,#ff0080,#ffb86c)',
     photo: '',
-    bio: 'Designs and maintains complex software systems, translating business requirements into scalable and secure solutions. Oversees code quality, mentors engineers, and resolves critical technical issues to ensure system performance and stability.',
+    bio: 'Designs and maintains complex software systems, turning business requirements into scalable, secure solutions. Mentors engineers and owns code quality.',
     skills: ['System Design','Software Architecture','Code Review','Mentoring'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -40,7 +40,7 @@ const team = [
     initials: 'AR', name: 'Azizur Rahman', role: 'Full Stack Software Engineer',
     color: '#00c896', grad: 'linear-gradient(135deg,#00c896,#0070f3)',
     photo: '',
-    bio: 'Delivers end-to-end application development across frontend and backend systems. Focuses on performance, security, API integration, and building reliable, user-friendly applications in close collaboration with the team.',
+    bio: 'Builds end-to-end applications across frontend and backend. Focused on performance, security, and API integration, always in close collaboration with the team.',
     skills: ['Frontend','Backend','API Integration','Security'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -48,7 +48,7 @@ const team = [
     initials: 'JR', name: 'Jehan Rahman', role: 'Senior Database Engineer',
     color: '#ffb86c', grad: 'linear-gradient(135deg,#ffb86c,#ff0080)',
     photo: '',
-    bio: 'Leads database design, optimisation, and performance management. Ensures data security, compliance, and high availability while supporting critical production systems and mentoring database engineers.',
+    bio: 'Leads database design and performance tuning, ensuring data security and high availability across critical production systems.',
     skills: ['Database Design','Performance Optimisation','Data Security','High Availability'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -56,7 +56,7 @@ const team = [
     initials: 'MR', name: 'Muntasir Rahman', role: 'Database Engineer',
     color: '#6c5ce7', grad: 'linear-gradient(135deg,#6c5ce7,#a29bfe)',
     photo: '',
-    bio: 'Supports database development and maintenance, including SQL queries, data processing, reporting, and performance tuning, ensuring data consistency and system reliability.',
+    bio: 'Supports database development and maintenance — SQL queries, data processing, and reporting — keeping data consistent and systems reliable.',
     skills: ['SQL','Data Processing','Reporting','Performance Tuning'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -64,7 +64,7 @@ const team = [
     initials: 'AM', name: 'Apple Mahmadud', role: 'UI & Frontend Designer',
     color: '#fd79a8', grad: 'linear-gradient(135deg,#fd79a8,#ff0080)',
     photo: '',
-    bio: 'Designs intuitive and visually refined user interfaces, transforming concepts into responsive frontend layouts while maintaining consistent design standards and strong user experience.',
+    bio: 'Designs intuitive, visually refined interfaces and turns concepts into responsive frontend layouts with consistent standards and strong UX.',
     skills: ['UI Design','Frontend','Responsive Design','UX'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -72,7 +72,7 @@ const team = [
     initials: 'MU', name: 'Mahatab Uddin', role: 'IT Engineer',
     color: '#00b894', grad: 'linear-gradient(135deg,#00b894,#00cec9)',
     photo: '',
-    bio: 'Manages and maintains IT infrastructure, including servers, networks, and systems. Ensures operational stability, security, and reliable day-to-day technical support.',
+    bio: 'Manages IT infrastructure — servers, networks, and systems — ensuring operational stability, security, and reliable day-to-day support.',
     skills: ['Infrastructure','Server Management','Networking','IT Support'],
     links: { linkedin: '#', portfolio: '#' },
   },
@@ -167,8 +167,13 @@ const wwuPoints = [
 
 function WhyWorkWithUs() {
   return (
-    <section className="nb-wwu-section">
-      <div className="nb-container">
+    <section className="nb-wwu-section" style={{position:'relative',background:'#05050f'}}>
+      <div style={{position:'absolute',inset:0,overflow:'hidden',pointerEvents:'none'}}>
+        <div className="nb-orb nb-orb-purple" style={{width:480,height:480,top:-180,left:-160,opacity:.3}}/>
+        <div className="nb-orb nb-orb-blue"   style={{width:420,height:420,bottom:-160,right:-140,opacity:.25}}/>
+        <div className="nb-section-dotgrid" style={{position:'absolute',inset:0}}/>
+      </div>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <Reveal>
           <div className="nb-wwu-head" style={{textAlign:'center'}}>
             <Badge>Why NexbeeLabs</Badge>
@@ -208,8 +213,13 @@ function WhyWorkWithUs() {
 
 function TeamCards() {
   return (
-    <section style={{padding:'60px 0 80px',position:'relative'}}>
-      <div className="nb-container">
+    <section style={{padding:'60px 0 80px',position:'relative',background:'#05050f'}}>
+      <div style={{position:'absolute',inset:0,overflow:'hidden',pointerEvents:'none'}}>
+        <div className="nb-orb nb-orb-blue"   style={{width:460,height:460,top:-160,right:-140,opacity:.25}}/>
+        <div className="nb-orb" style={{width:420,height:420,bottom:-160,left:-140,opacity:.25,background:'rgba(255,0,128,.3)'}}/>
+        <div className="nb-section-dotgrid" style={{position:'absolute',inset:0}}/>
+      </div>
+      <div className="nb-container" style={{position:'relative',zIndex:1}}>
         <Reveal>
           <div className="nb-section-head" style={{marginBottom:48}}>
             <Badge>Our Team</Badge>
@@ -268,7 +278,7 @@ function Culture() {
     { Icon: Globe,        color: '#ffb86c', title: 'Remote-first',     body: 'Based in Dhaka, collaborating globally. Async done right.' },
   ]
   return (
-    <section style={{padding:'0 0 80px',background:'radial-gradient(ellipse at top,rgba(121,40,202,.06),transparent 60%)'}}>
+    <section style={{padding:'80px 0 80px',position:'relative',background:'radial-gradient(ellipse at top,rgba(121,40,202,.16),transparent 80%),#05050f'}}>
       <div className="nb-container">
         <Reveal>
           <div className="nb-section-head" style={{marginBottom:40}}>
@@ -294,7 +304,7 @@ function Culture() {
 
 function Hiring() {
   return (
-    <section style={{padding:'0 0 100px'}}>
+    <section style={{padding:'60px 0 100px',background:'#05050f'}}>
       <div className="nb-container nb-container-narrow">
         <Reveal>
           <div className="nb-hiring-card">
