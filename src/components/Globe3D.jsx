@@ -42,10 +42,11 @@ export default function Globe3D() {
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     let animId
-    let rot    = 0
-    let logW   = 0
-    let logH   = 0
-    let dpr    = 1
+    let rot     = 0
+    let logW    = 0
+    let logH    = 0
+    let dpr     = 1
+    let visible = true
 
     const waves = PAIRS.map((_, i) => ({
       t:     (i * 0.141) % 1,
@@ -62,6 +63,7 @@ export default function Globe3D() {
     }
 
     function draw() {
+      if (!visible) { animId = null; return }
       const W = logW
       const H = logH
       if (!W || !H) { animId = requestAnimationFrame(draw); return }
@@ -182,12 +184,20 @@ export default function Globe3D() {
     const ro = new ResizeObserver(resize)
     ro.observe(canvas)
     window.addEventListener('resize', resize)
+
+    const io = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting
+      if (visible && animId == null) animId = requestAnimationFrame(draw)
+    }, { threshold: 0 })
+    io.observe(canvas)
+
     resize()
     draw()
 
     return () => {
       cancelAnimationFrame(animId)
       ro.disconnect()
+      io.disconnect()
       window.removeEventListener('resize', resize)
     }
   }, [])
