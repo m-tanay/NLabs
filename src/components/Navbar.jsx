@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { Menu, X, ArrowUpRight, Home as HomeIcon, Info, Layers, Briefcase, Workflow, Users, Mail } from 'lucide-react'
 
 const links = [
-  { label: 'Home',      to: '/' },
-  { label: 'About',     to: '/about' },
-  { label: 'Services',  to: '/services' },
-  { label: 'Portfolio', to: '/portfolio' },
-  { label: 'Process',   to: '/process' },
-  { label: 'Team',      to: '/team' },
-  { label: 'Contact',   to: '/contact' },
+  { label: 'Home',      to: '/',          Icon: HomeIcon },
+  { label: 'About',     to: '/about',     Icon: Info },
+  { label: 'Services',  to: '/services',  Icon: Layers },
+  { label: 'Portfolio', to: '/portfolio', Icon: Briefcase },
+  { label: 'Process',   to: '/process',   Icon: Workflow },
+  { label: 'Team',      to: '/team',      Icon: Users },
+  { label: 'Contact',   to: '/contact',   Icon: Mail },
 ]
 
 export default function Navbar({ onOpenContact }) {
@@ -45,11 +45,31 @@ export default function Navbar({ onOpenContact }) {
         </button>
       </div>
       <div className={`nb-mobile-menu ${open ? 'nb-mobile-menu-open' : ''}`}>
-        <NavLink to="/" className={({ isActive }) => `nb-mobile-link ${isActive ? 'nb-mobile-link-active':''}`} onClick={() => setOpen(false)}>Home</NavLink>
-        {links.map((l) => (
-          <NavLink key={l.to} to={l.to} className={({ isActive }) => `nb-mobile-link ${isActive ? 'nb-mobile-link-active':''}`} onClick={() => setOpen(false)}>{l.label}</NavLink>
+        {links.map((l, i) => (
+          <NavLink
+            key={l.to} to={l.to}
+            className={({ isActive }) => `nb-mobile-link ${isActive ? 'nb-mobile-link-active':''}`}
+            onClick={() => setOpen(false)}
+            style={{
+              opacity: open ? 1 : 0,
+              transform: open ? 'translateY(0)' : 'translateY(14px)',
+              transition: `opacity .4s ease ${open ? i * 0.06 : 0}s, transform .4s ease ${open ? i * 0.06 : 0}s`,
+            }}
+          >
+            <l.Icon size={17} className="nb-mobile-link-icon" />
+            {l.label}
+          </NavLink>
         ))}
-        <button className="nb-btn nb-btn-grad" style={{marginTop:12,justifyContent:'center'}} onClick={() => { setOpen(false); onOpenContact() }}>
+        <button
+          className="nb-btn nb-mobile-cta"
+          style={{
+            marginTop:12, justifyContent:'center',
+            opacity: open ? 1 : 0,
+            transform: open ? 'translateY(0)' : 'translateY(14px)',
+            transition: `opacity .4s ease ${open ? links.length * 0.06 : 0}s, transform .4s ease ${open ? links.length * 0.06 : 0}s`,
+          }}
+          onClick={() => { setOpen(false); onOpenContact() }}
+        >
           Let's talk <ArrowUpRight size={14} />
         </button>
       </div>
