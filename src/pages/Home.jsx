@@ -404,7 +404,7 @@ function Process() {
                   <div className="nb-proc-dot" style={{background:s.dot,boxShadow:`0 0 20px ${s.dot},0 0 0 4px #000,0 0 0 5px ${s.dot}33`}} />
                   <div className="nb-proc-marker-num">{s.n}</div>
                 </div>
-                <div className="nb-proc-card-inner">
+                <div className="nb-proc-card-inner" style={{'--pc': s.dot}}>
                   <div className="nb-proc-meta">
                     <span className="nb-proc-days">{s.days}</span>
                     <span className="nb-proc-icon"><s.Icon size={14} /></span>
